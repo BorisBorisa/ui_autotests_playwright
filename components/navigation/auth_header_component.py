@@ -16,3 +16,6 @@ class AuthHeaderComponent(BaseHeaderComponent):
                                         "card counter")
 
         self.user_profile_menu = UserProfileMenuComponent(page)
+
+    def check_visible(self):
+        self.card_button.check_visible()
