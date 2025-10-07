@@ -1,0 +1,24 @@
+from playwright.sync_api import Page
+
+from components.base_component import BaseComponent
+
+from elements.text import Text
+from elements.button import Button
+
+
+class CardEmptyViewComponent(BaseComponent):
+    def __init__(self, page: Page):
+        super().__init__(page)
+
+        self.description = Text(page, '//*[@id="favorites-wrapper"]//h1', "card empty view description")
+        self.continue_shopping_button = Button(page, '//*[@id="favorites-wrapper"]//button', "continue shopping")
+
+    def check_visible(self):
+        self.description.check_visible()
+        self.description.check_have_text(text="Your cart is empty.")
+
+        self.continue_shopping_button.check_visible()
+        self.continue_shopping_button.check_have_text(text="Continue Shopping")
+
+    def click_continue_shopping_button(self):
+        self.continue_shopping_button.click()
