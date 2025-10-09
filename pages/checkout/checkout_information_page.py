@@ -20,3 +20,9 @@ class CheckoutInformationPage(BasePage):
 
         self.cancel_button = Button(page, '//button/*[text()="Cancel"]', "cancel")
         self.continue_button = Button(page, '//button/*[text()="Continue"]', "continue")
+
+    def click_cancel_button(self):
+        self.cancel_button.click()
+
+    def click_continue_button(self):
+        self.continue_button.click()
