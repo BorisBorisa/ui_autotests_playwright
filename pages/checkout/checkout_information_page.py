@@ -14,7 +14,7 @@ class CheckoutInformationPage(BasePage):
         super().__init__(page)
 
         self.header = AuthHeaderComponent(page)
-        self.title = Text(page, '//*[@id="product-sort"]/h3', "title")
+        self.title = Text(page, '//*[@id="checkout-info"]/h3', "title")
 
         self.checkout_information_form = CheckoutInformationFormComponent(page)
 
