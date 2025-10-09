@@ -26,3 +26,16 @@ class CheckoutInformationFormComponent(BaseComponent):
 
         self.zip_code_input.fill(zip_code)
         self.zip_code_input.check_have_value(zip_code)
+
+    def check_visible(self, email: str, first_name: str, last_name: str, zip_code: str):
+        self.email_input.check_visible()
+        self.email_input.check_have_value(email)
+
+        self.first_name_input.check_visible()
+        self.first_name_input.check_have_value(first_name)
+
+        self.last_name_input.check_visible()
+        self.last_name_input.check_have_value(last_name)
+
+        self.zip_code_input.check_visible()
+        self.zip_code_input.check_have_value(zip_code)
