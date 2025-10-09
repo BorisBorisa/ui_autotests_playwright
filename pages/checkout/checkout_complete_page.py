@@ -28,3 +28,6 @@ class CheckoutCompletePage(BasePage):
         self.success_message.check_have_text(
             "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
         )
+
+    def click_continue_shopping_button(self):
+        self.continue_shopping_button.click()
