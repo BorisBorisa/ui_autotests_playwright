@@ -9,7 +9,7 @@ from elements.image import Image
 from elements.button import Button
 
 
-class ProductsPage(BasePage):
+class ProductPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
 
@@ -30,7 +30,6 @@ class ProductsPage(BasePage):
         self.price = Text(page, '//*[text()="$"]', "test")
 
         self.add_to_card_button = Button(page, '//*[@class="add-cart"]/button', "add to card")
-
 
     def click_back_to_product_button(self):
         self.back_to_products_button.click()
