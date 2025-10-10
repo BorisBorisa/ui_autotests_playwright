@@ -3,7 +3,7 @@ from playwright.async_api import Page
 from pages.base_page import BasePage
 
 from components.navigation.auth_header_component import AuthHeaderComponent
-from components.card.base_card_item_component import BaseCardItemComponent
+from components.base_card_item_component import BaseCardItemComponent
 
 from elements.text import Text
 from elements.button import Button
