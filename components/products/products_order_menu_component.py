@@ -14,17 +14,20 @@ class ProductsOrderMenuComponent(BaseComponent):
         self.search_input = Input(page, '//input[@data-slot="command-input"]', "search")
 
         self.ascending_order_button = Button(
-            page, '//*[@data-slot="command-item" and @data-value="asc"]',"ascending order"
+            page, '//*[@data-slot="command-item" and @data-value="asc"]', "ascending order"
         )
         self.descending_order_button = Button(
-            page, '//*[@data-slot="command-item" and @data-value="dsc"]',"descending order"
+            page, '//*[@data-slot="command-item" and @data-value="dsc"]', "descending order"
         )
         self.low_to_high_button = Button(
-            page, '//*[@data-slot="command-item" and @data-value="low"]',"low to high order"
+            page, '//*[@data-slot="command-item" and @data-value="low"]', "low to high order"
         )
         self.high_to_low_button = Button(
-            page, '//*[@data-slot="command-item" and @data-value="high"]',"high to low order"
+            page, '//*[@data-slot="command-item" and @data-value="high"]', "high to low order"
         )
+
+    def check_visible(self):
+        self.menu_button.check_visible()
 
     def fill_order_search_input(self, value: str):
         self.menu_button.click()

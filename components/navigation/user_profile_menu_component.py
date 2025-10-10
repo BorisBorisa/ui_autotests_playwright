@@ -13,6 +13,9 @@ class UserProfileMenuComponent(BaseComponent):
         self.favorites_menu_button = Button(page, '//*[text()="Favorites"]', "favorites")
         self.log_out_menu_button = Button(page, '//*[text()="Log out"]', "log out")
 
+    def check_visible(self):
+        self.menu_button.check_visible()
+
     def click_user_favorites(self):
         self.menu_button.click()
 
