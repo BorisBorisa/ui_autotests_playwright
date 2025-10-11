@@ -1,10 +1,9 @@
-from typing import Generator
-
 import pytest
 from _pytest.fixtures import SubRequest
-from playwright.async_api import Page
 
-from playwright.sync_api import Playwright
+from typing import Generator
+
+from playwright.sync_api import Playwright, Page
 
 from pages.authentication.login_page import LoginPage
 from pages.products.products_page import ProductsPage
