@@ -17,3 +17,6 @@ class ProductsPage(BasePage):
 
         self.products_order_menu = ProductsOrderMenuComponent(page)
         self.product_card = ProductCardComponent(page)
+
+    def is_page_opened(self):
+        self.title.check_visible()
