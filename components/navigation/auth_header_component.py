@@ -17,11 +17,10 @@ class AuthHeaderComponent(BaseHeaderComponent):
 
         self.user_profile_menu = UserProfileMenuComponent(page)
 
-    def check_visible(self):
-        super().check_visible()
-
-        self.user_profile_menu.check_visible()
+    def check_visible(self, email: str):
+        self.logo_link.check_visible()
         self.card_button.check_visible()
+        self.user_profile_menu.check_visible(email)
 
     def get_card_count(self, nth: int = 0, **kwargs) -> int:
         try:
