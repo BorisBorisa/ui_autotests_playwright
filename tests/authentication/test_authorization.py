@@ -1,10 +1,15 @@
+import pytest
+
 from pages.authentication.login_page import LoginPage
 from pages.products.products_page import ProductsPage
 
 from tools.routes import AppRoute
+
 from config import settings
 
 
+@pytest.mark.regression
+@pytest.mark.authorization
 class TestAuthorization:
     def test_successful_authorization(self, login_page: LoginPage, products_page: ProductsPage):
         login_page.visit(url=AppRoute.LOGIN)
