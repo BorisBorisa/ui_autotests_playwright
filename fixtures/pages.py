@@ -28,7 +28,12 @@ def favorites_page(page_with_state: Page) -> FavoritesPage:
 
 
 @pytest.fixture
-def products_page(page_with_state: Page) -> ProductsPage:
+def products_page(page: Page) -> ProductsPage:
+    return ProductsPage(page)
+
+
+@pytest.fixture
+def products_page_with_state(page_with_state: Page) -> ProductsPage:
     return ProductsPage(page_with_state)
 
 
