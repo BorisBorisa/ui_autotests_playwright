@@ -1,4 +1,5 @@
 import pytest
+import allure
 
 from pages.authentication.login_page import LoginPage
 from pages.products.products_page import ProductsPage
@@ -11,6 +12,7 @@ from config import settings
 @pytest.mark.regression
 @pytest.mark.authorization
 class TestAuthorization:
+    @allure.title("User login with correct email and password")
     def test_successful_authorization(self, login_page: LoginPage, products_page: ProductsPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -25,6 +27,7 @@ class TestAuthorization:
         products_page.title.check_visible()
         products_page.products_order_menu.check_visible()
 
+    @allure.title("User login with wrong email")
     def test_wrong_email_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -47,6 +50,7 @@ class TestAuthorization:
 
         login_page.check_visible_empty_email_alert()
 
+    @allure.title("User login with wrong password")
     def test_wrong_password_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -67,6 +71,7 @@ class TestAuthorization:
 
         login_page.check_visible_empty_password_alert()
 
+    @allure.title("User login with wrong credentials")
     def test_wrong_credentials_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -89,6 +94,7 @@ class TestAuthorization:
         login_page.check_visible_empty_email_alert()
         login_page.check_visible_empty_password_alert()
 
+    @allure.title("Navigation from login page to home page")
     def test_navigate_from_authorization_to_home(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
