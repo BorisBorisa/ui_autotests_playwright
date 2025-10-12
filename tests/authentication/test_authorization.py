@@ -62,8 +62,6 @@ class TestAuthorization:
 
         login_page.check_visible_empty_password_alert()
 
-    def test_navigate_from_authorization_to_home(self):
-        pass
     def test_wrong_credentials_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -85,3 +83,10 @@ class TestAuthorization:
 
         login_page.check_visible_empty_email_alert()
         login_page.check_visible_empty_password_alert()
+
+    def test_navigate_from_authorization_to_home(self, login_page: LoginPage):
+        login_page.visit(url=AppRoute.LOGIN)
+
+        login_page.click_back_to_home_link()
+
+        login_page.check_current_url(settings.get_base_url)
