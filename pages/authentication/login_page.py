@@ -8,6 +8,7 @@ from components.navigation.base_header_component import BaseHeaderComponent
 from elements.text import Text
 from elements.input import Input
 from elements.button import Button
+from elements.link import Link
 
 
 class LoginPage(BasePage):
@@ -24,6 +25,7 @@ class LoginPage(BasePage):
         self.password_alert = Text(page, '//*[label[@for="password"]]//p[contains(@class, "text-red-500")]',
                                    "password alert")
 
+        self.back_to_home_link = Link(page, '//a[text()="Back to home"]', "back to home")
         self.toast_notification = SonnerToastComponent(page)
 
     def fill_login_form(self, email: str, password: str):
@@ -35,6 +37,9 @@ class LoginPage(BasePage):
 
     def click_login_button(self):
         self.login_button.click()
+
+    def click_back_to_home_link(self):
+        self.back_to_home_link.click()
 
     def check_visible_wrong_email_alert(self):
         self.email_alert.check_visible()
