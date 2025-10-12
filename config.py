@@ -16,6 +16,11 @@ class TestUser(BaseModel):
     password: str
 
 
+class TestData(BaseModel):
+    invalid_email: str
+    invalid_password: str
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         extra="allow",
@@ -28,6 +33,7 @@ class Settings(BaseSettings):
     headless: bool
     browsers: list[Browser]
     test_user: TestUser
+    test_data: TestData
     browser_state_file: FilePath
 
     @property
