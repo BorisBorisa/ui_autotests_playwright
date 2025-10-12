@@ -10,8 +10,5 @@ class BaseHeaderComponent(BaseComponent):
 
         self.logo_link = Link(page, '//*[@id="ecommerce-header"]//a', "logo")
 
-    def check_visible(self):
-        self.logo_link.check_visible()
-
     def click_logo_link(self):
         self.logo_link.click()
