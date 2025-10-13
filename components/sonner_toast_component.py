@@ -1,3 +1,4 @@
+import allure
 from playwright.sync_api import Page
 from typing import Literal
 
@@ -14,6 +15,7 @@ class SonnerToastComponent(BaseComponent):
             page, '//*[@data-sonner-toast and @data-type="{toast_type}"]//*[@data-title]', "sonner toast"
         )
 
+    @allure.step("Check sonner toast notification visible")
     def check_visible(
             self,
             toast_type: Literal['default', 'success', 'info', 'warning', 'error'],

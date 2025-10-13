@@ -1,3 +1,4 @@
+import allure
 from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
@@ -10,5 +11,6 @@ class BaseHeaderComponent(BaseComponent):
 
         self.logo_link = Link(page, '//*[@id="ecommerce-header"]//a', "logo")
 
+    @allure.step("Clicking logo link")
     def click_logo_link(self):
         self.logo_link.click()

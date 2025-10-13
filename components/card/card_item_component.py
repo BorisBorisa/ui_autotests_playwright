@@ -1,3 +1,5 @@
+import allure
+
 from playwright.sync_api import Page
 
 from components.base_card_item_component import BaseCardItemComponent
@@ -18,6 +20,7 @@ class CardItemComponent(BaseCardItemComponent):
         )
         self.quantity = Text(page, '//*[text()="Quantity"]/following-sibling::*/span', "quantity")
 
+    @allure.step('Check card item visible')
     def check_visible(self, name: str, nth: int = 0, **kwargs):
         super().check_visible(name, nth, **kwargs)
 

@@ -1,3 +1,4 @@
+import allure
 from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
@@ -14,6 +15,7 @@ class CheckoutInformationFormComponent(BaseComponent):
         self.last_name_input = Input(page, '//*[text()="Last Name"]/parent::*/input', "last name")
         self.zip_code_input = Input(page, '//*[text()="Zip Code"]/parent::*/input', "zip code")
 
+    @allure.step("Fill checkout information form")
     def fill(self, email: str, first_name: str, last_name: str, zip_code: str):
         self.email_input.fill(email)
         self.email_input.check_have_value(email)
@@ -27,6 +29,7 @@ class CheckoutInformationFormComponent(BaseComponent):
         self.zip_code_input.fill(zip_code)
         self.zip_code_input.check_have_value(zip_code)
 
+    @allure.step("Check visible checkout information form")
     def check_visible(self, email: str, first_name: str, last_name: str, zip_code: str):
         self.email_input.check_visible()
         self.email_input.check_have_value(email)

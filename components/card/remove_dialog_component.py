@@ -1,3 +1,5 @@
+import allure
+
 from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
@@ -18,6 +20,7 @@ class RemoveDialogComponent(BaseComponent):
         self.close_button = Button(page, '//button[text()="Close"]', "close")
         self.remove_button = Button(page, '//button[text()="Remove"]', "remove")
 
+    @allure.step('Check that remove dialog visible')
     def check_visible(self):
         self.close_icon_button.check_visible()
 
@@ -32,11 +35,14 @@ class RemoveDialogComponent(BaseComponent):
         self.close_button.check_visible()
         self.remove_button.check_visible()
 
+    @allure.step('Click close dialog icon')
     def click_close_icon_button(self):
         self.close_icon_button.click()
 
+    @allure.step('Click close dialog button')
     def click_close_button(self):
         self.close_button.click()
 
+    @allure.step('Click confirm remove button')
     def click_remove_button(self):
         self.remove_button.click()

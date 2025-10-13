@@ -1,3 +1,5 @@
+import allure
+
 from components.base_component import BaseComponent
 
 from playwright.sync_api import Page
@@ -18,6 +20,7 @@ class BaseCardItemComponent(BaseComponent):
         self.price = Text(page, '//*[text()="Price"]/following-sibling::*', "price")
         self.total_price = Text(page, '//*[text()="Total"]/following-sibling::*', "total price")
 
+    @allure.step('Check card item visible')
     def check_visible(self, name: str, nth: int = 0, **kwargs):
         self.image.check_visible(nth, **kwargs)
 
@@ -29,10 +32,12 @@ class BaseCardItemComponent(BaseComponent):
         self.price.check_visible(nth, **kwargs)
         self.total_price.check_visible(nth, **kwargs)
 
+    @allure.step("Getting product price")
     def get_price(self, nth: int = 0, **kwargs) -> float:
         price = self.price.get_inner_text(nth, **kwargs)
         return float(price.replace("$", ""))
 
+    @allure.step("Getting product total price")
     def get_total_price(self, nth: int = 0, **kwargs) -> float:
         total_price = self.total_price.get_inner_text(nth, **kwargs)
         return float(total_price.replace("$", ""))
