@@ -7,3 +7,7 @@ __pycache__
 
 #playwright
 .auth
+
+# allure
+allure-results
+allure-report
