@@ -18,12 +18,15 @@ class CheckoutOverviewPage(BasePage):
 
         self.card_item = BaseCardItemComponent(page)
 
-        self.payment_info_text = Text(page, '//h4[contains(text(), "Payment Information")]/parent::*/p', "")
-        self.shipping_info_text = Text(page, '//h4[contains(text(), "Shipping Information")]/parent::*/p', "")
-
-        self.items_price = Text(page, '//h4[contains(text(), "Price Total")]/parent::*/p[1]', "")
-        self.tax = Text(page, '//h4[contains(text(), "Price Total")]/parent::*/p[2]', "")
-        self.total_price = Text(page, '//h4[contains(text(), "Price Total")]/parent::*/p[3]', "")
+        self.payment_info_text = Text(
+            page, '//h4[contains(text(), "Payment Information")]/parent::*/p', "payment information"
+        )
+        self.shipping_info_text = Text(
+            page, '//h4[contains(text(), "Shipping Information")]/parent::*/p', "shipping information"
+        )
+        self.items_price = Text(page, '//h4[contains(text(), "Price Total")]/parent::*/p[1]', "items price")
+        self.tax = Text(page, '//h4[contains(text(), "Price Total")]/parent::*/p[2]', "tax")
+        self.total_price = Text(page, '//h4[contains(text(), "Price Total")]/parent::*/p[3]', "total price")
 
         self.cancel_button = Button(page, '//button/*[text()="Cancel"]', "cancel")
         self.finish_button = Button(page, '//button/*[text()="Finish"]', "finish")
