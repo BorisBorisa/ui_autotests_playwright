@@ -2,6 +2,9 @@ import allure
 
 from abc import ABC, abstractmethod
 from playwright.sync_api import Page, Locator, expect
+from tools.logger import get_logger
+
+logger = get_logger("BASE_ELEMENT")
 
 
 class BaseElement(ABC):
@@ -20,6 +23,7 @@ class BaseElement(ABC):
         step = f'Getting locator "{locator}" at index "{nth}"'
 
         with allure.step(step):
+            logger.info(step)
             return self.page.locator(locator).nth(nth)
 
     def click(self, nth: int = 0, **kwargs) -> None:
@@ -27,6 +31,7 @@ class BaseElement(ABC):
         step = f'Clicking {self.type_of} "{self.name}"'
 
         with allure.step(step):
+            logger.info(step)
             locator.click()
 
     def check_visible(self, nth: int = 0, **kwargs) -> None:
@@ -34,6 +39,7 @@ class BaseElement(ABC):
         step = f'Checking that {self.type_of} "{self.name}" is visible'
 
         with allure.step(step):
+            logger.info(step)
             expect(locator).to_be_visible()
 
     def check_have_text(self, text: str, nth: int = 0, **kwargs) -> None:
@@ -41,4 +47,5 @@ class BaseElement(ABC):
         step = f'Checking that {self.type_of} "{self.name}" has text "{text}"'
 
         with allure.step(step):
+            logger.info(step)
             expect(locator).to_have_text(text)

@@ -2,7 +2,9 @@ import allure
 
 from elements.base_element import BaseElement
 from playwright.sync_api import expect
+from tools.logger import get_logger
 
+logger = get_logger("FAVORITE_RADIO_BUTTON")
 
 class FavoriteRadioButton(BaseElement):
     @property
@@ -14,4 +16,5 @@ class FavoriteRadioButton(BaseElement):
         step = f'Checking that {self.type_of} "{self.name}" is active'
 
         with allure.step(step):
+            logger.info(step)
             expect(locator).to_have_attribute("style", "color: rgb(255, 0, 0);")

@@ -1,6 +1,9 @@
 import allure
 
 from elements.base_element import BaseElement
+from tools.logger import get_logger
+
+logger = get_logger("TEXT")
 
 
 class Text(BaseElement):
@@ -13,4 +16,5 @@ class Text(BaseElement):
         step = f'Getting inner text of {self.type_of} "{self.name}"'
 
         with allure.step(step):
+            logger.info(step)
             return locator.inner_text()
