@@ -22,9 +22,8 @@ class LoginPage(BasePage):
         self.password_input = Input(page, '//*[@id="password"]', "password")
         self.login_button = Button(page, '//button[text()="Login"]', "login")
 
-        self.email_alert = Text(page, '//*[label[@for="email"]]//p[contains(@class, "text-red-500")]', "email alert")
-        self.password_alert = Text(page, '//*[label[@for="password"]]//p[contains(@class, "text-red-500")]',
-                                   "password alert")
+        self.email_alert = Text(page, '//label[@for="email"]/following::p', "email alert")
+        self.password_alert = Text(page, '//label[@for="password"]/following::p', "password alert")
 
         self.back_to_home_link = Link(page, '//a[text()="Back to home"]', "back to home")
         self.toast_notification = SonnerToastComponent(page)
