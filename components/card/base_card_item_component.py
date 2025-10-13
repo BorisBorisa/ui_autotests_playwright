@@ -30,9 +30,9 @@ class BaseCardItemComponent(BaseComponent):
         self.total_price.check_visible(nth, **kwargs)
 
     def get_price(self, nth: int = 0, **kwargs) -> float:
-        price = self.price.get_text(nth, **kwargs)
+        price = self.price.get_inner_text(nth, **kwargs)
         return float(price.replace("$", ""))
 
     def get_total_price(self, nth: int = 0, **kwargs) -> float:
-        total_price = self.total_price.get_text(nth, **kwargs)
+        total_price = self.total_price.get_inner_text(nth, **kwargs)
         return float(total_price.replace("$", ""))

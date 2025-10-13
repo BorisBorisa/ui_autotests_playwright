@@ -25,7 +25,7 @@ class AuthHeaderComponent(BaseHeaderComponent):
     def get_card_count(self, nth: int = 0, **kwargs) -> int:
         try:
             self.card_button_counter.check_visible(nth, **kwargs)
-            count = self.card_button_counter.get_text(nth, **kwargs)
+            count = self.card_button_counter.get_inner_text(nth, **kwargs)
             return int(count)
         except AssertionError:
             return 0

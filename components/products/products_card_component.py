@@ -40,5 +40,5 @@ class ProductCardComponent(BaseComponent):
         self.add_to_card_button.check_visible(nth, **kwargs)
 
     def get_price(self, nth: int = 0, **kwargs) -> float:
-        price = self.price.get_text(nth, **kwargs)
+        price = self.price.get_inner_text(nth, **kwargs)
         return float(price.replace("$", ""))

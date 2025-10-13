@@ -29,13 +29,13 @@ class CheckoutOverviewPage(BasePage):
         self.finish_button = Button(page, '//button/*[text()="Finish"]', "finish")
 
     def get_items_price(self) -> float:
-        text = self.items_price.get_text()
+        text = self.items_price.get_inner_text()
         return float(text.split("$")[1])
 
     def get_tax(self) -> float:
-        text = self.tax.get_text()
+        text = self.tax.get_inner_text()
         return float(text.split("$")[1])
 
     def get_total_price(self) -> float:
-        text = self.total_price.get_text()
+        text = self.total_price.get_inner_text()
         return float(text.split("$")[1])
