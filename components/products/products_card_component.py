@@ -1,4 +1,4 @@
-from playwright.async_api import Page
+from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
 
@@ -17,28 +17,39 @@ class ProductCardComponent(BaseComponent):
         )
         self.image = Image(page, '//*[contains(@class,"products")]//img', "product")
 
-        self.name_text = Text(page, '//*[contains(@class,"products")]//a[2]', "name")
-        self.description_text = Text(page, '//*[contains(@class,"products")]//a[3]', "description")
-        self.price = Text(page, '//*[text()="$"]', "test")
-        self.add_to_card_button = Button(page, '//*[contains(@class,"products")]//button[contains(@class, "border")]',
-                                         "add to card")
+        self.name = Text(page, '//*[contains(@class,"products")]//a[2]', "name")
+        self.description = Text(page, '//*[contains(@class,"products")]//a[3]', "description")
+        self.price = Text(page, '//*[text()="$"]', "price")
+        self.add_to_card_button = Button(
+            page, '//*[contains(@class,"products")]//button[contains(@class, "border")]', "add to card"
+        )
 
     def check_visible(self, name: str, description: str, price: str, nth: int = 0, **kwargs):
         self.favorite_button.check_visible(nth, **kwargs)
 
         self.image.check_visible(nth, **kwargs)
 
-        self.name_text.check_visible(nth, **kwargs)
-        self.name_text.check_have_text(name, nth, **kwargs)
+        self.name.check_visible(nth, **kwargs)
+        self.name.check_have_text(name, nth, **kwargs)
 
-        self.description_text.check_visible(nth, **kwargs)
-        self.description_text.check_have_text(description, nth, **kwargs)
+        self.description.check_visible(nth, **kwargs)
+        self.description.check_have_text(description, nth, **kwargs)
 
         self.price.check_visible(nth, **kwargs)
         self.price.check_have_text(price, nth, **kwargs)
 
         self.add_to_card_button.check_visible(nth, **kwargs)
 
-    def get_price(self, nth: int = 0, **kwargs) -> float:
+    def _get_price(self, nth: int = 0, **kwargs) -> float:
         price = self.price.get_inner_text(nth, **kwargs)
         return float(price.replace("$", ""))
+
+    def _get_count_by_name(self, **kwargs) -> int:
+        locator = self.page.locator(self.name.locator.format(**kwargs))
+        return locator.count()
+
+    def get_all_prices(self, **kwargs) -> list[float]:
+        return [self._get_price(i, **kwargs) for i in range(self._get_count_by_name())]
+
+    def get_all_names(self, **kwargs):
+        return [self.name.get_inner_text(i) for i in range(self._get_count_by_name())]
