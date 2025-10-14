@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
 
@@ -38,27 +38,39 @@ class ProductsOrderMenuComponent(BaseComponent):
     def click_ascending_order(self):
         self.menu_button.click()
 
-        self.ascending_order_button.click()
         self.ascending_order_button.check_visible()
 
+        with self.page.expect_response(lambda r: "?order_by=asc" in r.url and r.status == 200):
+            self.ascending_order_button.click()
+
+        self.menu_button.check_have_text("A to Z (Ascending)")
 
     def click_descending_order(self):
         self.menu_button.click()
 
-        self.descending_order_button.click()
         self.descending_order_button.check_visible()
 
+        with self.page.expect_response(lambda r: "?order_by=dsc" in r.url and r.status == 200):
+            self.descending_order_button.click()
+
+        self.menu_button.check_have_text("Z to A (Descending)")
 
     def click_low_to_high_order(self):
         self.menu_button.click()
 
-        self.low_to_high_button.click()
         self.low_to_high_button.check_visible()
 
+        with self.page.expect_response(lambda r: "?order_by=low" in r.url and r.status == 200):
+            self.low_to_high_button.click()
+
+        self.menu_button.check_have_text("Low to High (Price)")
 
     def click_high_to_low_order(self):
         self.menu_button.click()
 
-        self.high_to_low_button.click()
         self.high_to_low_button.check_visible()
 
+        with self.page.expect_response(lambda r: "?order_by=high" in r.url and r.status == 200):
+            self.high_to_low_button.click()
+
+        self.menu_button.check_have_text("High to Low (Price)")
