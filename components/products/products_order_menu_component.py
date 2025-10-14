@@ -32,29 +32,33 @@ class ProductsOrderMenuComponent(BaseComponent):
     def fill_order_search_input(self, value: str):
         self.menu_button.click()
 
-        expect(self.search_input).to_be_visible()
+        self.search_input.check_visible()
         self.search_input.fill(value)
 
     def click_ascending_order(self):
         self.menu_button.click()
 
-        expect(self.ascending_order_button).to_be_visible()
         self.ascending_order_button.click()
+        self.ascending_order_button.check_visible()
+
 
     def click_descending_order(self):
         self.menu_button.click()
 
-        expect(self.descending_order_button).to_be_visible()
         self.descending_order_button.click()
+        self.descending_order_button.check_visible()
+
 
     def click_low_to_high_order(self):
         self.menu_button.click()
 
-        expect(self.low_to_high_button).to_be_visible()
         self.low_to_high_button.click()
+        self.low_to_high_button.check_visible()
+
 
     def click_high_to_low_order(self):
         self.menu_button.click()
 
-        expect(self.high_to_low_button).to_be_visible()
         self.high_to_low_button.click()
+        self.high_to_low_button.check_visible()
+
