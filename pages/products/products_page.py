@@ -1,8 +1,10 @@
 import allure
 
 from playwright.async_api import Page
+
 from pages.base_page import BasePage
 
+from components.sonner_toast_component import SonnerToastComponent
 from components.navigation.auth_header_component import AuthHeaderComponent
 from components.products.products_order_menu_component import ProductsOrderMenuComponent
 from components.products.products_card_component import ProductCardComponent
@@ -19,6 +21,8 @@ class ProductsPage(BasePage):
 
         self.products_order_menu = ProductsOrderMenuComponent(page)
         self.product_card = ProductCardComponent(page)
+
+        self.toast_notification = SonnerToastComponent(page)
 
     def is_page_opened(self):
         self.title.check_visible()
@@ -42,3 +46,9 @@ class ProductsPage(BasePage):
     def check_names_sorted_z_to_a(self):
         names = self.product_card.get_all_names()
         assert names == sorted(names, reverse=True), f"Product names are not sorted alphabetically Z → A: {names}"
+
+    def check_visible_added_to_favorites_notification(self):
+        self.toast_notification.check_visible("success", "Added to favorites")
+
+    def check_visible_remove_from_favorites_notification(self):
+        self.toast_notification.check_visible("warning", "Removed from favorites")
