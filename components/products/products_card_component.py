@@ -40,16 +40,18 @@ class ProductCardComponent(BaseComponent):
 
         self.add_to_card_button.check_visible(nth, **kwargs)
 
-    def _get_price(self, nth: int = 0, **kwargs) -> float:
-        price = self.price.get_inner_text(nth, **kwargs)
-        return float(price.replace("$", ""))
-
-    def _get_count_by_name(self, **kwargs) -> int:
+    def _count_products_by_name(self, **kwargs) -> int:
         locator = self.page.locator(self.name.locator.format(**kwargs))
         return locator.count()
 
     def get_all_prices(self, **kwargs) -> list[float]:
-        return [self._get_price(i, **kwargs) for i in range(self._get_count_by_name())]
+        prices = []
+
+        for nth in range(self._count_products_by_name()):
+            price = self.price.get_inner_text(nth, **kwargs)
+            prices.append(float(price.replace("$", "")))
+
+        return prices
 
     def get_all_names(self, **kwargs):
         return [self.name.get_inner_text(i) for i in range(self._get_count_by_name())]
