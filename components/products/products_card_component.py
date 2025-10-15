@@ -7,6 +7,8 @@ from elements.text import Text
 from elements.button import Button
 from elements.favorite_radio_button import FavoriteRadioButton
 
+from tools.data_clases import Product
+
 
 class ProductCardComponent(BaseComponent):
     def __init__(self, page: Page):
@@ -54,4 +56,26 @@ class ProductCardComponent(BaseComponent):
         return prices
 
     def get_all_names(self, **kwargs):
-        return [self.name.get_inner_text(i) for i in range(self._get_count_by_name())]
+        return [self.name.get_inner_text(i, **kwargs) for i in range(self._count_products_by_name())]
+
+    def get_product(self, nth: int = 0, **kwargs) -> Product:
+        return Product(
+            name=self.name.get_inner_text(nth, **kwargs),
+            description=self.description.get_inner_text(nth, **kwargs),
+            img_src=self.image.get_src(nth, **kwargs),
+            price=self.price.get_inner_text()
+        )
+
+    def get_all_products(self, **kwargs) -> list[Product]:
+        products = []
+
+        for nth in range(self._count_products_by_name()):
+            product = Product(
+                name=self.name.get_inner_text(nth, **kwargs),
+                description=self.description.get_inner_text(nth, **kwargs),
+                img_src=self.image.get_src(nth, **kwargs),
+                price=self.price.get_inner_text()
+            )
+            products.append(product)
+
+        return products
