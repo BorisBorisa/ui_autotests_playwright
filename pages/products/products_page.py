@@ -26,6 +26,16 @@ class ProductsPage(BasePage):
 
     def is_page_opened(self):
         self.title.check_visible()
+        self.title.check_have_text("Products")
+
+    def click_product_favorite_button(self, index: int = 0, **kwargs):
+        self.product_card.favorite_button.click(index, **kwargs)
+
+    def check_product_favorite_button_is_active(self, index: int = 0, **kwargs):
+        self.product_card.favorite_button.is_active(index, **kwargs)
+
+    def check_product_favorite_button_is_inactive(self, index: int = 0, **kwargs):
+        self.product_card.favorite_button.is_inactive(index, **kwargs)
 
     @allure.step("Check prices sorted low to high")
     def check_prices_sorted_low_to_high(self):
