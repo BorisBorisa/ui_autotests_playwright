@@ -34,6 +34,9 @@ class ProductsPage(BasePage):
     def click_product_favorite_button(self, index: int = 0, **kwargs):
         self.product_card.favorite_button.click(index, **kwargs)
 
+    def click_product_add_to_card_button(self, index: int = 0, **kwargs):
+        self.product_card.add_to_card_button.click(index, **kwargs)
+
     def check_add_to_cart_button_in_remove_state(self, index: int = 0, **kwargs):
         self.product_card.check_add_button_in_remove_state(index, **kwargs)
 
