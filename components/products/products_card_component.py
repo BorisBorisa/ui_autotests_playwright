@@ -42,11 +42,26 @@ class ProductCardComponent(BaseComponent):
 
         self.add_to_card_button.check_visible(nth, **kwargs)
 
-    def check_add_button_in_remove_state(self, nth: int = 0, **kwargs):
+    def click_on_product(self, index: int = 0, **kwargs):
+        self.image.click(index, **kwargs)
+
+    def click_product_favorite_button(self, index: int = 0, **kwargs):
+        self.favorite_button.click(index, **kwargs)
+
+    def click_product_add_to_card_button(self, index: int = 0, **kwargs):
+        self.add_to_card_button.click(index, **kwargs)
+
+    def check_add_to_cart_button_in_remove_state(self, nth: int = 0, **kwargs):
         self.add_to_card_button.check_have_text("Remove from cart", nth, **kwargs)
 
-    def check_add_button_in_add_state(self, nth: int = 0, **kwargs):
+    def check_add_to_cart_button_in_add_state(self, nth: int = 0, **kwargs):
         self.add_to_card_button.check_have_text("Add to cart", nth, **kwargs)
+
+    def check_product_favorite_button_is_active(self, index: int = 0, **kwargs):
+        self.favorite_button.is_active(index, **kwargs)
+
+    def check_product_favorite_button_is_inactive(self, index: int = 0, **kwargs):
+        self.favorite_button.is_inactive(index, **kwargs)
 
     def _count_products_by_name(self, **kwargs) -> int:
         locator = self.page.locator(self.name.locator.format(**kwargs))

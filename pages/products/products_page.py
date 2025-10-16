@@ -28,33 +28,6 @@ class ProductsPage(BasePage):
         self.title.check_visible()
         self.title.check_have_text("Products")
 
-    def click_on_product(self, index: int = 0, **kwargs):
-        self.product_card.image.click(index, **kwargs)
-
-    def click_product_favorite_button(self, index: int = 0, **kwargs):
-        self.product_card.favorite_button.click(index, **kwargs)
-
-    def click_product_add_to_card_button(self, index: int = 0, **kwargs):
-        self.product_card.add_to_card_button.click(index, **kwargs)
-
-    def click_cart_button(self, **kwargs):
-        self.header.cart_button.click(**kwargs)
-
-    def check_add_to_cart_button_in_remove_state(self, index: int = 0, **kwargs):
-        self.product_card.check_add_button_in_remove_state(index, **kwargs)
-
-    def check_add_to_cart_button_in_add_state(self, index: int = 0, **kwargs):
-        self.product_card.check_add_button_in_add_state(index, **kwargs)
-
-    def check_product_favorite_button_is_active(self, index: int = 0, **kwargs):
-        self.product_card.favorite_button.is_active(index, **kwargs)
-
-    def check_product_favorite_button_is_inactive(self, index: int = 0, **kwargs):
-        self.product_card.favorite_button.is_inactive(index, **kwargs)
-
-    def check_cart_counter_value(self, expected_value: int):
-        self.header.cart_button_counter.check_have_text(str(expected_value))
-
     @allure.step("Check prices sorted low to high")
     def check_prices_sorted_low_to_high(self):
         prices = self.product_card.get_all_prices()

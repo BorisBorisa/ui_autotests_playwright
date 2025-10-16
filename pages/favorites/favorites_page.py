@@ -33,9 +33,6 @@ class FavoritesPage(BasePage):
         self.title.check_visible()
         self.title.check_have_text("Favorites")
 
-    def click_product_favorite_button(self, index: int = 0):
-        self.product_card.favorite_button.click(index)
-
     def check_favorites_products_equals_expected(self, expected_products: list[Product]):
         actual_products = self.product_card.get_all_products()
 

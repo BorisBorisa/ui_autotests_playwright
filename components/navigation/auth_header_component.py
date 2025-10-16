@@ -24,4 +24,16 @@ class AuthHeaderComponent(BaseHeaderComponent):
         self.cart_button.check_visible()
         self.user_profile_menu.check_visible(email)
 
+    @allure.step("Clicking cart button")
+    def click_cart_button(self):
+        self.cart_button.click()
 
+    def click_user_favorites(self):
+        self.user_profile_menu.click_user_favorites()
+
+    def click_user_log_out(self):
+        self.click_user_log_out()
+
+    @allure.step("Check cart counter value")
+    def check_cart_counter_value(self, expected_value: int):
+        self.cart_button_counter.check_have_text(str(expected_value))
