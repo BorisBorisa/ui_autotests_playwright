@@ -94,3 +94,24 @@ class TestCart:
         card_page.is_page_opened()
 
         card_page.check_cart_products_equals_expected([product])
+
+    def test_removing_product_from_cart(
+            self,
+            products_page_with_state: ProductsPage,
+            card_page: CardPage
+    ):
+        products_page_with_state.visit(AppRoute.PRODUCTS)
+
+        products_page_with_state.product_card.click_add_to_card_button(3)
+        products_page_with_state.header.click_cart_button()
+        card_page.is_page_opened()
+
+        card_page.card_item.click_remove_button(0)
+
+        card_page.remove_dialog.check_visible()
+        card_page.remove_dialog.click_remove_button()
+
+        card_page.empty_view.check_visible()
+        card_page.empty_view.click_continue_shopping_button()
+
+        products_page_with_state.is_page_opened()
