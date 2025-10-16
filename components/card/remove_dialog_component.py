@@ -17,8 +17,8 @@ class RemoveDialogComponent(BaseComponent):
         self.title = Text(page, '//*[@data-slot="dialog-title"]', "title")
         self.description = Text(page, '//*[@data-slot="dialog-description"]', "description")
 
-        self.close_button = Button(page, '//button[text()="Close"]', "close")
-        self.remove_button = Button(page, '//button[text()="Remove"]', "remove")
+        self.close_button = Button(page, '//*[@role="dialog"]//button[text()="Close"]', "close")
+        self.remove_button = Button(page, '//*[@role="dialog"]//button[text()="Remove"]', "remove")
 
     @allure.step('Check that remove dialog visible')
     def check_visible(self):
