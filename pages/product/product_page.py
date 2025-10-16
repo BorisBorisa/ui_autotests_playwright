@@ -62,6 +62,9 @@ class ProductPage(BasePage):
     def check_product_favorite_button_is_inactive(self, **kwargs):
         self.favorite_button.is_inactive(**kwargs)
 
+    def check_cart_counter_value(self, expected_value: int):
+        self.header.cart_button_counter.check_have_text(str(expected_value))
+
     def get_product(self, **kwargs) -> Product:
         return Product(
             name=self.name.get_inner_text(**kwargs),
