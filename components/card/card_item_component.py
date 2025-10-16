@@ -7,6 +7,8 @@ from components.base_card_item_component import BaseCardItemComponent
 from elements.text import Text
 from elements.button import Button
 
+from tools.data_clases import Product
+
 
 class CardItemComponent(BaseCardItemComponent):
     def __init__(self, page: Page):
@@ -27,3 +29,20 @@ class CardItemComponent(BaseCardItemComponent):
         self.quantity_decrease_button.check_visible(nth, **kwargs)
         self.quantity_increase_button.check_visible(nth, **kwargs)
         self.quantity.check_visible(nth, **kwargs)
+
+    def _count_products_by_name(self, **kwargs) -> int:
+        locator = self.page.locator(self.name.locator.format(**kwargs))
+        return locator.count()
+
+    def get_all_products(self, **kwargs) -> list[Product]:
+        products = []
+
+        for nth in range(self._count_products_by_name()):
+            product = Product(
+                name=self.name.get_inner_text(nth, **kwargs),
+                img_src=self.image.get_src(nth, **kwargs),
+                price=self.price.get_inner_text()
+            )
+            products.append(product)
+
+        return products
