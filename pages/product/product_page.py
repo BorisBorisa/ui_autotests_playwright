@@ -53,6 +53,17 @@ class ProductPage(BasePage):
     def click_add_to_card_button(self):
         self.add_to_card_button.click()
 
+    def increase_quantity_by(self, n: int):
+        for _ in range(n):
+            self.quantity_increase_button.click()
+
+    def decrease_quantity_by(self, n: int):
+        for _ in range(n):
+            self.quantity_decrease_button.click()
+
+    def check_quantity_equals_expected(self, expected_quantity: int):
+        self.quantity.check_have_value(str(expected_quantity))
+
     def check_favorite_button_is_active(self):
         self.favorite_button.is_active()
 
