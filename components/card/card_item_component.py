@@ -28,28 +28,28 @@ class CardItemComponent(BaseCardItemComponent):
         self.remove_dialog = RemoveDialogComponent(page)
 
     @allure.step('Check card item visible')
-    def check_visible(self, name: str, nth: int = 0, **kwargs):
-        super().check_visible(name, nth, **kwargs)
+    def check_visible(self, name: str, nth: int = 0):
+        super().check_visible(name, nth)
 
-        self.quantity_decrease_button.check_visible(nth, **kwargs)
-        self.quantity_increase_button.check_visible(nth, **kwargs)
-        self.quantity.check_visible(nth, **kwargs)
+        self.quantity_decrease_button.check_visible(nth)
+        self.quantity_increase_button.check_visible(nth)
+        self.quantity.check_visible(nth)
 
-    def _count_products_by_name(self, **kwargs) -> int:
-        locator = self.page.locator(self.name.locator.format(**kwargs))
     def click_remove_button(self, index: int = 0):
         self.remove_button.click(index)
 
+    def _count_products_by_name(self) -> int:
+        locator = self.page.locator(self.name.locator.format())
         return locator.count()
 
-    def get_all_products(self, **kwargs) -> list[Product]:
+    def get_all_products(self) -> list[Product]:
         products = []
 
         for nth in range(self._count_products_by_name()):
             product = Product(
-                name=self.name.get_inner_text(nth, **kwargs),
-                img_src=self.image.get_src(nth, **kwargs),
-                price=self.price.get_inner_text()
+                name=self.name.get_inner_text(nth),
+                img_src=self.image.get_src(nth),
+                price=self.price.get_inner_text(nth)
             )
             products.append(product)
 
