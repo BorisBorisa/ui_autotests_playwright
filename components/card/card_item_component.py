@@ -28,12 +28,23 @@ class CardItemComponent(BaseCardItemComponent):
         self.remove_dialog = RemoveDialogComponent(page)
 
     @allure.step('Check card item visible')
-    def check_visible(self, name: str, nth: int = 0):
-        super().check_visible(name, nth)
+    def check_visible(self, name: str, index: int = 0):
+        super().check_visible(name, index)
 
-        self.quantity_decrease_button.check_visible(nth)
-        self.quantity_increase_button.check_visible(nth)
-        self.quantity.check_visible(nth)
+        self.quantity_decrease_button.check_visible(index)
+        self.quantity_increase_button.check_visible(index)
+        self.quantity.check_visible(index)
+
+    def check_quantity_equals_expected(self, expected_quantity: int, index: int = 0):
+        self.quantity.check_have_text(str(expected_quantity), index)
+
+    def check_price_equal_expected(self, price: str, index: int = 0):
+        self.price.check_have_text(price, index)
+
+    def check_total_price_equal_expected(self, price: str, quantity: int, index: int = 0):
+        expected_total_price = float(price.replace("$", "")) * quantity
+
+        self.total_price.check_have_text(f"${expected_total_price:.2f}", index)
 
     def click_remove_button(self, index: int = 0):
         self.remove_button.click(index)
