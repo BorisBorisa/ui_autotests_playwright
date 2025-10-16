@@ -60,8 +60,4 @@ class ProductsPage(BasePage):
         names = self.product_card.get_all_names()
         assert names == sorted(names, reverse=True), f"Product names are not sorted alphabetically Z → A: {names}"
 
-    def check_visible_added_to_favorites_notification(self):
-        self.toast_notification.check_visible("success", "Added to favorites")
 
-    def check_visible_remove_from_favorites_notification(self):
-        self.toast_notification.check_visible("warning", "Removed from favorites")
