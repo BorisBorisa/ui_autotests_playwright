@@ -38,5 +38,28 @@ class ProductPage(BasePage):
 
         self.add_to_card_button = Button(page, '//*[@class="add-cart"]/button', "add to card")
 
+        self.toast_notification = SonnerToastComponent(page)
+
+    def is_page_opened(self):
+        self.back_to_products_button.check_visible()
+        self.back_to_products_button.check_have_text("Back to Products")
+
     def click_back_to_product_button(self):
         self.back_to_products_button.click()
+
+    def click_product_favorite_button(self, **kwargs):
+        self.favorite_button.click(**kwargs)
+
+    def check_product_favorite_button_is_active(self, **kwargs):
+        self.favorite_button.is_active(**kwargs)
+
+    def check_product_favorite_button_is_inactive(self, **kwargs):
+        self.favorite_button.is_inactive(**kwargs)
+
+    def get_product(self, **kwargs) -> Product:
+        return Product(
+            name=self.name.get_inner_text(**kwargs),
+            description=self.description.get_inner_text(**kwargs),
+            img_src=self.image.get_src(**kwargs),
+            price=self.price.get_inner_text()
+        )
