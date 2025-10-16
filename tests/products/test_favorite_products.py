@@ -12,6 +12,7 @@ from tools.routes import AppRoute
 @pytest.mark.products
 @pytest.mark.favorite
 class TestFavoriteProducts:
+    @allure.title("Add products to favorites")
     def test_add_products_to_favorites(
             self,
             products_page_with_state: ProductsPage,
@@ -22,26 +23,27 @@ class TestFavoriteProducts:
 
         products_page.visit(AppRoute.PRODUCTS)
 
-        products_page.click_product_favorite_button(0)
+        products_page.product_card.click_product_favorite_button(0)
         added_products.append(products_page.product_card.get_product(0))
-        products_page.check_product_favorite_button_is_active(0)
+        products_page.product_card.check_product_favorite_button_is_active(0)
         products_page.toast_notification.check_visible_added_to_favorites_notification()
 
-        products_page.click_product_favorite_button(5)
+        products_page.product_card.click_product_favorite_button(5)
         added_products.append(products_page.product_card.get_product(5))
-        products_page.check_product_favorite_button_is_active(5)
+        products_page.product_card.check_product_favorite_button_is_active(5)
         products_page.toast_notification.check_visible_added_to_favorites_notification()
 
         products_page.reload()
 
-        products_page.check_product_favorite_button_is_active(0)
-        products_page.check_product_favorite_button_is_active(5)
+        products_page.product_card.check_product_favorite_button_is_active(0)
+        products_page.product_card.check_product_favorite_button_is_active(0)
 
-        products_page.header.user_profile_menu.click_user_favorites()
+        products_page.header.click_user_favorites()
         favorites_page.is_page_opened()
 
         favorites_page.check_favorites_products_equals_expected(added_products)
 
+    @allure.title("Add products to favorites from products card")
     def test_add_product_to_favorites_from_product_card(
             self,
             products_page_with_state: ProductsPage,
@@ -50,8 +52,7 @@ class TestFavoriteProducts:
     ):
         products_page_with_state.visit(AppRoute.PRODUCTS)
 
-        products_page_with_state.click_on_product(2)
-
+        products_page_with_state.product_card.click_on_product(2)
         product_page.is_page_opened()
 
         product_page.click_product_favorite_button()
@@ -63,11 +64,12 @@ class TestFavoriteProducts:
 
         product_page.check_product_favorite_button_is_active()
 
-        product_page.header.user_profile_menu.click_user_favorites()
+        product_page.header.click_user_favorites()
         favorites_page.is_page_opened()
 
         favorites_page.check_favorites_products_equals_expected([product])
 
+    @allure.title("Removing products from favorites")
     def test_removing_product_from_favorites(
             self,
             products_page_with_state: ProductsPage,
@@ -77,26 +79,26 @@ class TestFavoriteProducts:
         products_page = products_page_with_state
         products_page.visit(AppRoute.PRODUCTS)
 
-        products_page.click_product_favorite_button(0)
-        products_page.click_product_favorite_button(1)
-        products_page.click_product_favorite_button(2)
+        products_page.product_card.click_product_favorite_button(0)
+        products_page.product_card.click_product_favorite_button(1)
+        products_page.product_card.click_product_favorite_button(2)
 
-        products_page.click_product_favorite_button(0)
-        products_page.check_product_favorite_button_is_inactive(0)
+        products_page.product_card.click_product_favorite_button(0)
+        products_page.product_card.check_product_favorite_button_is_inactive(0)
         products_page.toast_notification.check_visible_remove_from_favorites_notification()
 
-        products_page.click_on_product(1)
+        products_page.product_card.click_on_product(1)
         product_page.is_page_opened()
 
         product_page.click_product_favorite_button()
         product_page.toast_notification.check_visible_remove_from_favorites_notification()
         product_page.click_back_to_product_button()
 
-        products_page.check_product_favorite_button_is_inactive(1)
-        products_page.header.user_profile_menu.click_user_favorites()
+        products_page.product_card.check_product_favorite_button_is_inactive(1)
+        products_page.header.click_user_favorites()
         favorites_page.is_page_opened()
 
-        favorites_page.click_product_favorite_button(0)
+        favorites_page.product_card.click_product_favorite_button(0)
         favorites_page.toast_notification.check_visible_remove_from_favorites_notification()
 
         favorites_page.empty_view.check_visible()
