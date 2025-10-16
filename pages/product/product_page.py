@@ -47,27 +47,21 @@ class ProductPage(BasePage):
     def click_back_to_product_button(self):
         self.back_to_products_button.click()
 
-    def click_product_favorite_button(self, **kwargs):
-        self.favorite_button.click(**kwargs)
+    def click_favorite_button(self):
+        self.favorite_button.click()
 
-    def click_add_to_card_button(self, **kwargs):
-        self.add_to_card_button.click(**kwargs)
+    def click_add_to_card_button(self):
+        self.add_to_card_button.click()
 
-    def click_cart_button(self, **kwargs):
-        self.header.cart_button.click(**kwargs)
+    def check_favorite_button_is_active(self):
+        self.favorite_button.is_active()
 
-    def check_product_favorite_button_is_active(self, **kwargs):
-        self.favorite_button.is_active(**kwargs)
+    def check_favorite_button_is_inactive(self):
+        self.favorite_button.is_inactive()
 
-    def check_product_favorite_button_is_inactive(self, **kwargs):
-        self.favorite_button.is_inactive(**kwargs)
-
-    def check_cart_counter_value(self, expected_value: int):
-        self.header.cart_button_counter.check_have_text(str(expected_value))
-
-    def get_product(self, **kwargs) -> Product:
+    def get_product(self) -> Product:
         return Product(
-            name=self.name.get_inner_text(**kwargs),
-            img_src=self.image.get_src(**kwargs),
+            name=self.name.get_inner_text(),
+            img_src=self.image.get_src(),
             price=self.price.get_inner_text()
         )
