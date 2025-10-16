@@ -1,3 +1,4 @@
+import allure
 from playwright.async_api import Page
 
 from pages.base_page import BasePage
@@ -10,6 +11,7 @@ from components.card.card_empty_view_component import CardEmptyViewComponent
 from elements.text import Text
 from elements.button import Button
 
+from tools.data_clases import Product
 
 class CardPage(BasePage):
     def __init__(self, page: Page):
@@ -30,3 +32,12 @@ class CardPage(BasePage):
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Your Cart")
+
+    def check_cart_products_equals_expected(self, expected_products: list[Product]):
+        actual_products = self.card_item.get_all_products()
+
+        expected_sorted = sorted(expected_products)
+        actual_sorted = sorted(actual_products)
+
+        with allure.step("Verify that cart products match the expected ones"):
+            assert expected_sorted == actual_sorted, f"Expected: {expected_sorted}\nActual: {actual_sorted}"
