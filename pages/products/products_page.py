@@ -28,6 +28,9 @@ class ProductsPage(BasePage):
         self.title.check_visible()
         self.title.check_have_text("Products")
 
+    def click_on_product(self, index: int = 0, **kwargs):
+        self.product_card.image.click(index, **kwargs)
+
     def click_product_favorite_button(self, index: int = 0, **kwargs):
         self.product_card.favorite_button.click(index, **kwargs)
 
