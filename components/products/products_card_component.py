@@ -61,7 +61,6 @@ class ProductCardComponent(BaseComponent):
     def get_product(self, nth: int = 0, **kwargs) -> Product:
         return Product(
             name=self.name.get_inner_text(nth, **kwargs),
-            description=self.description.get_inner_text(nth, **kwargs),
             img_src=self.image.get_src(nth, **kwargs),
             price=self.price.get_inner_text()
         )
@@ -72,7 +71,6 @@ class ProductCardComponent(BaseComponent):
         for nth in range(self._count_products_by_name()):
             product = Product(
                 name=self.name.get_inner_text(nth, **kwargs),
-                description=self.description.get_inner_text(nth, **kwargs),
                 img_src=self.image.get_src(nth, **kwargs),
                 price=self.price.get_inner_text()
             )
