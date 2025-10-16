@@ -11,7 +11,7 @@ from tools.routes import AppRoute
 
 @pytest.mark.regression
 @pytest.mark.products
-@pytest.mark.card
+@pytest.mark.cart
 class TestCart:
     @allure.title("Add products to cart")
     def test_add_products_to_cart(
