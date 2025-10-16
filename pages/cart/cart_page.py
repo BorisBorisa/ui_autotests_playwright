@@ -16,7 +16,7 @@ class CardPage(BasePage):
         super().__init__(page)
 
         self.header = AuthHeaderComponent(page)
-        self.title = Text(page, '//*[@id="product-sort"]/h3', "title")
+        self.title = Text(page, '//*[@id="cart"]/h3', "title")
 
         self.empty_view = CardEmptyViewComponent(page)
 
