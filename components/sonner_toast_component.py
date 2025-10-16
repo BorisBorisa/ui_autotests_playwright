@@ -29,3 +29,9 @@ class SonnerToastComponent(BaseComponent):
 
     def check_visible_remove_from_favorites_notification(self):
         self.check_visible("warning", "Removed from favorites")
+
+    def check_visible_added_to_cart_notification(self):
+        self.check_visible("success", "Added to cart")
+
+    def check_visible_remove_from_cart_notification(self):
+        self.check_visible("warning", "Removed from cart")
