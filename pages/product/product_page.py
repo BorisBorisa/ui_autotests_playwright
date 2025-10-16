@@ -50,6 +50,12 @@ class ProductPage(BasePage):
     def click_product_favorite_button(self, **kwargs):
         self.favorite_button.click(**kwargs)
 
+    def click_add_to_card_button(self, **kwargs):
+        self.add_to_card_button.click(**kwargs)
+
+    def click_cart_button(self, **kwargs):
+        self.header.cart_button.click(**kwargs)
+
     def check_product_favorite_button_is_active(self, **kwargs):
         self.favorite_button.is_active(**kwargs)
 
