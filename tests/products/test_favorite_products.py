@@ -12,7 +12,11 @@ from tools.routes import AppRoute
 @pytest.mark.products
 @pytest.mark.favorite
 class TestFavoriteProducts:
-    def test_add_product_to_favorites(self, products_page_with_state: ProductsPage, favorites_page: FavoritesPage):
+    def test_add_products_to_favorites(
+            self,
+            products_page_with_state: ProductsPage,
+            favorites_page: FavoritesPage
+    ):
         added_products = []
         products_page = products_page_with_state
 
@@ -31,6 +35,7 @@ class TestFavoriteProducts:
         products_page.reload()
 
         products_page.check_product_favorite_button_is_active(0)
+        products_page.check_product_favorite_button_is_active(5)
 
         products_page.header.user_profile_menu.click_user_favorites()
         favorites_page.is_page_opened()
