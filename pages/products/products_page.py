@@ -40,6 +40,9 @@ class ProductsPage(BasePage):
     def check_product_favorite_button_is_inactive(self, index: int = 0, **kwargs):
         self.product_card.favorite_button.is_inactive(index, **kwargs)
 
+    def check_cart_counter_value(self, expected_value: int):
+        self.header.cart_button_counter.check_have_text(str(expected_value))
+
     @allure.step("Check prices sorted low to high")
     def check_prices_sorted_low_to_high(self):
         prices = self.product_card.get_all_prices()
