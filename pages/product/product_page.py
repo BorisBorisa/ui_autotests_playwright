@@ -68,7 +68,6 @@ class ProductPage(BasePage):
     def get_product(self, **kwargs) -> Product:
         return Product(
             name=self.name.get_inner_text(**kwargs),
-            description=self.description.get_inner_text(**kwargs),
             img_src=self.image.get_src(**kwargs),
             price=self.price.get_inner_text()
         )
