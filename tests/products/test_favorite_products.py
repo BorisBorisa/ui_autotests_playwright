@@ -1,14 +1,11 @@
 import pytest
 import allure
 
+from pages.product.product_page import ProductPage
 from pages.products.products_page import ProductsPage
 from pages.favorites.favorites_page import FavoritesPage
 
 from tools.routes import AppRoute
-
-from tools.logger import get_logger
-
-logger = get_logger("TEST_TEST")
 
 
 @pytest.mark.regression
