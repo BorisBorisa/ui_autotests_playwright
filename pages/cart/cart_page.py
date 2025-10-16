@@ -26,3 +26,7 @@ class CardPage(BasePage):
 
         self.continue_shopping_button = Button(page, '//button/*[(text()="Continue Shopping")]', "continue shopping")
         self.checkout_button = Button(page, '//button/*[(text()="Checkout")]', "checkout")
+
+    def is_page_opened(self):
+        self.title.check_visible()
+        self.title.check_have_text("Your Cart")
