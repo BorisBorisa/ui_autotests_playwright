@@ -24,11 +24,4 @@ class AuthHeaderComponent(BaseHeaderComponent):
         self.cart_button.check_visible()
         self.user_profile_menu.check_visible(email)
 
-    @allure.step('Get cart items count')
-    def get_cart_count(self, nth: int = 0, **kwargs) -> int:
-        try:
-            self.cart_button_counter.check_visible(nth, **kwargs)
-            count = self.cart_button_counter.get_inner_text(nth, **kwargs)
-            return int(count)
-        except AssertionError:
-            return 0
+
