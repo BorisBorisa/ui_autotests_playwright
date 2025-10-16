@@ -12,8 +12,8 @@ class CardEmptyViewComponent(BaseComponent):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.description = Text(page, '//*[@id="favorites-wrapper"]//h1', "card empty view description")
-        self.continue_shopping_button = Button(page, '//*[@id="favorites-wrapper"]//button', "continue shopping")
+        self.description = Text(page, '//*[@id="cart"]//h1', "card empty view description")
+        self.continue_shopping_button = Button(page, '//*[@id="cart"]//button', "continue shopping")
 
     @allure.step('Check visible card empty view')
     def check_visible(self):
