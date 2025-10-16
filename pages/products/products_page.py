@@ -37,6 +37,9 @@ class ProductsPage(BasePage):
     def click_product_add_to_card_button(self, index: int = 0, **kwargs):
         self.product_card.add_to_card_button.click(index, **kwargs)
 
+    def click_cart_button(self, **kwargs):
+        self.header.cart_button.click(**kwargs)
+
     def check_add_to_cart_button_in_remove_state(self, index: int = 0, **kwargs):
         self.product_card.check_add_button_in_remove_state(index, **kwargs)
 
@@ -71,5 +74,3 @@ class ProductsPage(BasePage):
     def check_names_sorted_z_to_a(self):
         names = self.product_card.get_all_names()
         assert names == sorted(names, reverse=True), f"Product names are not sorted alphabetically Z → A: {names}"
-
-
