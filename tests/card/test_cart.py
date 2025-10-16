@@ -41,7 +41,7 @@ class TestCart:
         products_page.product_card.check_add_to_cart_button_in_remove_state(0)
         products_page.product_card.check_add_to_cart_button_in_remove_state(2)
 
-        products_page.product_card.click_cart_button()
+        products_page.header.click_cart_button()
         card_page.is_page_opened()
 
         card_page.check_cart_products_equals_expected(added_products)
