@@ -115,3 +115,26 @@ class TestCart:
         card_page.empty_view.click_continue_shopping_button()
 
         products_page_with_state.is_page_opened()
+
+    def test_add_product_with_quantity_from_product_card(
+            self,
+            products_page_with_state: ProductsPage,
+            product_page: ProductPage,
+            card_page: CardPage
+    ):
+        products_page_with_state.visit(AppRoute.PRODUCTS)
+        products_page_with_state.product_card.click(3)
+        product_page.is_page_opened()
+
+        product = product_page.get_product()
+        product_page.increase_quantity_by(7)
+        product_page.decrease_quantity_by(3)
+        product_page.check_quantity_equals_expected(5)
+        product_page.click_add_to_card_button()
+
+        product_page.header.click_cart_button()
+        card_page.is_page_opened()
+
+        card_page.card_item.check_quantity_equals_expected(5)
+        card_page.card_item.check_price_equal_expected(product.price, 0)
+        card_page.card_item.check_total_price_equal_expected(product.price, 5, 0)
