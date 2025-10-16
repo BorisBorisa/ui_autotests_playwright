@@ -42,6 +42,12 @@ class ProductCardComponent(BaseComponent):
 
         self.add_to_card_button.check_visible(nth, **kwargs)
 
+    def check_add_button_in_remove_state(self, nth: int = 0, **kwargs):
+        self.add_to_card_button.check_have_text("Remove from cart", nth, **kwargs)
+
+    def check_add_button_in_add_state(self, nth: int = 0, **kwargs):
+        self.add_to_card_button.check_have_text("Add to cart", nth, **kwargs)
+
     def _count_products_by_name(self, **kwargs) -> int:
         locator = self.page.locator(self.name.locator.format(**kwargs))
         return locator.count()
