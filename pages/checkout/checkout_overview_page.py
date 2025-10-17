@@ -1,3 +1,5 @@
+import allure
+
 from playwright.async_api import Page
 
 from pages.base_page import BasePage
@@ -35,12 +37,15 @@ class CheckoutOverviewPage(BasePage):
         self.title.check_visible()
         self.title.check_have_text("Checkout: Overview")
 
+    @allure.step("Click finish button")
     def click_finish_button(self):
         self.finish_button.click()
 
+    @allure.step("Click cancel button")
     def click_cancel_button(self):
         self.cancel_button.click()
 
+    @allure.step("Check visible checkout summary")
     def check_visible_checkout_summary(self):
         self.payment_info_text.check_visible()
         self.shipping_info_text.check_visible()

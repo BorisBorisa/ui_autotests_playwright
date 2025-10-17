@@ -1,3 +1,5 @@
+import allure
+
 from playwright.async_api import Page
 
 from pages.base_page import BasePage
@@ -24,6 +26,7 @@ class CheckoutCompletePage(BasePage):
         self.title.check_visible()
         self.title.check_have_text("Checkout: Complete!")
 
+    @allure.step("Check visible complete message")
     def check_visible_complete_message(self):
         self.success_message_title.check_visible()
         self.success_message_title.check_have_text("Thank you for your order!")
@@ -33,5 +36,6 @@ class CheckoutCompletePage(BasePage):
             "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
         )
 
+    @allure.step("Click continue shopping button")
     def click_continue_shopping_button(self):
         self.continue_shopping_button.click()
