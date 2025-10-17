@@ -30,3 +30,18 @@ class CheckoutInformationPage(BasePage):
 
     def click_continue_button(self):
         self.continue_button.click()
+
+    def fill_checkout_information_form(self, first_name: str, last_name: str, zip_code: str):
+        self.checkout_information_form.fill(
+            first_name=first_name,
+            last_name=last_name,
+            zip_code=zip_code
+        )
+
+    def check_visible_checkout_information_form(self, email: str, first_name: str, last_name: str, zip_code: str):
+        self.checkout_information_form.check_visible(
+            email=email,
+            first_name=first_name,
+            last_name=last_name,
+            zip_code=zip_code
+        )
