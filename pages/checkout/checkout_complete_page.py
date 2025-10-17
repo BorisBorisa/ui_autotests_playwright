@@ -20,6 +20,10 @@ class CheckoutCompletePage(BasePage):
 
         self.continue_shopping_button = Button(page, '//button/*[text()="Continue Shopping"]', "continue shopping")
 
+    def is_page_opened(self):
+        self.title.check_visible()
+        self.title.check_have_text("Checkout: Complete!")
+
     def check_visible_complete_message(self):
         self.success_message_title.check_visible()
         self.success_message_title.check_have_text("Thank you for your order!")
