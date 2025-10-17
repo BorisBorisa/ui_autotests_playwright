@@ -22,18 +22,20 @@ class BaseCardItemComponent(BaseComponent):
         self.price = Text(page, '//*[text()="Price"]/following-sibling::*', "price")
         self.total_price = Text(page, '//*[text()="Total"]/following-sibling::*', "total price")
 
-    @allure.step("Check product card visible")
-    def check_visible(self, name: str, nth: int = 0, **kwargs):
-        self.image.check_visible(nth, **kwargs)
+    @allure.step("Check cart item {index} is visible")
+    def check_visible(self, product: Product, index: int = 0):
+        self.image.check_visible(index)
+        self.image.check_image_src(product.img_src, index)
 
-        self.name.check_visible(nth, **kwargs)
-        self.name.check_have_text(name, nth, **kwargs)
+        self.name.check_visible(index)
+        self.name.check_have_text(product.name, index)
 
-        self.remove_button.check_visible(nth, **kwargs)
+        self.quantity.check_visible(index)
 
-        self.price.check_visible(nth, **kwargs)
-        self.total_price.check_visible(nth, **kwargs)
+        self.price.check_visible(index)
+        self.price.check_have_text(product.price, index)
 
+        self.total_price.check_visible(index)
 
     @allure.step("Getting product total price")
     def get_total_price(self, nth: int = 0, **kwargs) -> float:

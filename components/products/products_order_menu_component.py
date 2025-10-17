@@ -1,3 +1,5 @@
+import allure
+
 from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
@@ -29,12 +31,14 @@ class ProductsOrderMenuComponent(BaseComponent):
     def check_visible(self):
         self.menu_button.check_visible()
 
+    @allure.step("Fill order search input")
     def fill_order_search_input(self, value: str):
         self.menu_button.click()
 
         self.search_input.check_visible()
         self.search_input.fill(value)
 
+    @allure.step('Click ascending order')
     def click_ascending_order(self):
         self.menu_button.click()
 
@@ -45,6 +49,7 @@ class ProductsOrderMenuComponent(BaseComponent):
 
         self.menu_button.check_have_text("A to Z (Ascending)")
 
+    @allure.step('Click descending order')
     def click_descending_order(self):
         self.menu_button.click()
 
@@ -55,6 +60,7 @@ class ProductsOrderMenuComponent(BaseComponent):
 
         self.menu_button.check_have_text("Z to A (Descending)")
 
+    @allure.step('Click low to high order')
     def click_low_to_high_order(self):
         self.menu_button.click()
 
@@ -65,6 +71,7 @@ class ProductsOrderMenuComponent(BaseComponent):
 
         self.menu_button.check_have_text("Low to High (Price)")
 
+    @allure.step('Click high to low order')
     def click_high_to_low_order(self):
         self.menu_button.click()
 
