@@ -41,12 +41,16 @@ class CheckoutOverviewPage(BasePage):
     def click_finish_button(self):
         self.finish_button.click()
 
-    def get_tax(self) -> float:
-        text = self.tax.get_inner_text()
-        return float(text.split("$")[1])
     def click_cancel_button(self):
         self.cancel_button.click()
 
     def get_total_price(self) -> float:
         text = self.total_price.get_inner_text()
         return float(text.split("$")[1])
+    def check_visible_checkout_summary(self):
+        self.payment_info_text.check_visible()
+        self.shipping_info_text.check_visible()
+        self.items_price.check_visible()
+        self.tax.check_visible()
+        self.total_price.check_visible()
+
