@@ -16,8 +16,8 @@ class BaseCardItemComponent(BaseComponent):
 
         self.image = Image(page, '//*[contains(@class, "cart-list")]//img', "product")
         self.name = Text(page, '//*[contains(@class, "cart-list")]//h3', "product name")
-        self.remove_button = Button(page, '//button[text()="Remove"]', "product remove")
 
+        self.quantity = Text(page, '//*[text()="Quantity"]/following-sibling::*/span', "quantity")
 
         self.price = Text(page, '//*[text()="Price"]/following-sibling::*', "price")
         self.total_price = Text(page, '//*[text()="Total"]/following-sibling::*', "total price")
