@@ -37,7 +37,7 @@ class BaseCardItemComponent(BaseComponent):
 
         self.total_price.check_visible(index)
 
-    @allure.step("Getting product total price")
-    def get_total_price(self, nth: int = 0, **kwargs) -> float:
-        total_price = self.total_price.get_inner_text(nth, **kwargs)
-        return float(total_price.replace("$", ""))
+    @allure.step("Check that cart items match expected products list")
+    def check_cart_items_equal_expected(self, expected_products: list[Product]):
+        for index, product in enumerate(expected_products):
+            self.check_visible(product, index)
