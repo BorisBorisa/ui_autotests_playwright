@@ -1,3 +1,5 @@
+import allure
+
 from playwright.async_api import Page
 
 from pages.base_page import BasePage
@@ -31,7 +33,10 @@ class CardPage(BasePage):
         self.title.check_visible()
         self.title.check_have_text("Your Cart")
 
+    @allure.step("Click continue shopping button")
     def click_continue_shopping_button(self):
         self.continue_shopping_button.click()
+
+    @allure.step("Click checkout button")
     def click_checkout_button(self):
         self.checkout_button.click()
