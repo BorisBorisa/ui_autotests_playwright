@@ -36,9 +36,11 @@ class LoginPage(BasePage):
         self.password_input.fill(password)
         self.password_input.check_have_value(password)
 
+    @allure.step("Click login button")
     def click_login_button(self):
         self.login_button.click()
 
+    @allure.step("Click back to home link")
     def click_back_to_home_link(self):
         self.back_to_home_link.click()
 
