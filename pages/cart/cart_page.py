@@ -10,6 +10,7 @@ from components.card.card_empty_view_component import CardEmptyViewComponent
 from elements.text import Text
 from elements.button import Button
 
+
 class CardPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
@@ -30,5 +31,7 @@ class CardPage(BasePage):
         self.title.check_visible()
         self.title.check_have_text("Your Cart")
 
+    def click_continue_shopping_button(self):
+        self.continue_shopping_button.click()
     def click_checkout_button(self):
         self.checkout_button.click()
