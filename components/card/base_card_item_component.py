@@ -34,10 +34,6 @@ class BaseCardItemComponent(BaseComponent):
         self.price.check_visible(nth, **kwargs)
         self.total_price.check_visible(nth, **kwargs)
 
-    @allure.step("Getting product price")
-    def get_price(self, nth: int = 0, **kwargs) -> float:
-        price = self.price.get_inner_text(nth, **kwargs)
-        return float(price.replace("$", ""))
 
     @allure.step("Getting product total price")
     def get_total_price(self, nth: int = 0, **kwargs) -> float:
