@@ -36,19 +36,6 @@ class CardItemComponent(BaseCardItemComponent):
     def click_remove_button(self, index: int = 0):
         self.remove_button.click(index)
 
-    def _count_products_by_name(self) -> int:
-        locator = self.page.locator(self.name.locator.format())
-        return locator.count()
-
-    def get_all_products(self) -> list[Product]:
-        products = []
-
-        for nth in range(self._count_products_by_name()):
-            product = Product(
-                name=self.name.get_inner_text(nth),
-                img_src=self.image.get_src(nth),
-                price=self.price.get_inner_text(nth)
-            )
-            products.append(product)
-
-        return products
+    @allure.step("Check that quantity of cart item {index} equals expected value: {expected_quantity}")
+    def check_quantity_equals_expected(self, expected_quantity: int, index: int = 0):
+        self.quantity.check_have_text(str(expected_quantity), index)
