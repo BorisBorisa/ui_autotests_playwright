@@ -1,3 +1,4 @@
+import allure
 from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
@@ -26,42 +27,49 @@ class ProductCardComponent(BaseComponent):
             page, '//*[contains(@class,"products")]//button[contains(@class, "border")]', "add to card"
         )
 
-    def check_visible(self, name: str, description: str, price: str, nth: int = 0, **kwargs):
-        self.favorite_button.check_visible(nth, **kwargs)
+    def check_visible(self, product: Product, index: int = 0):
+        self.favorite_button.check_visible(index)
 
-        self.image.check_visible(nth, **kwargs)
+        self.image.check_visible(index)
+        self.image.check_image_src(product.img_src, index)
 
-        self.name.check_visible(nth, **kwargs)
-        self.name.check_have_text(name, nth, **kwargs)
+        self.name.check_visible(index)
+        self.name.check_have_text(product.name, index)
 
-        self.description.check_visible(nth, **kwargs)
-        self.description.check_have_text(description, nth, **kwargs)
+        self.description.check_visible(index)
 
-        self.price.check_visible(nth, **kwargs)
-        self.price.check_have_text(price, nth, **kwargs)
+        self.price.check_visible(index)
+        self.price.check_have_text(product.price, index)
 
-        self.add_to_card_button.check_visible(nth, **kwargs)
+        self.add_to_card_button.check_visible(index)
 
-    def click(self, index: int = 0, **kwargs):
-        self.image.click(index, **kwargs)
+    @allure.step("Click image on product card with index {index}")
+    def click(self, index: int = 0):
+        self.image.click(index)
 
-    def click_favorite_button(self, index: int = 0, **kwargs):
-        self.favorite_button.click(index, **kwargs)
+    @allure.step("Click favorite button on product card with index {index}")
+    def click_favorite_button(self, index: int = 0):
+        self.favorite_button.click(index)
 
-    def click_add_to_card_button(self, index: int = 0, **kwargs):
-        self.add_to_card_button.click(index, **kwargs)
+    @allure.step("Click 'add to card' button on product card with index {index}")
+    def click_add_to_card_button(self, index: int = 0):
+        self.add_to_card_button.click(index)
 
-    def check_add_to_cart_button_in_remove_state(self, nth: int = 0, **kwargs):
-        self.add_to_card_button.check_have_text("Remove from cart", nth, **kwargs)
+    @allure.step("Check 'add to card' button on product card {index} is in 'Remove from cart' state")
+    def check_add_to_cart_button_in_remove_state(self, index: int = 0):
+        self.add_to_card_button.check_have_text("Remove from cart", index)
 
-    def check_add_to_cart_button_in_add_state(self, nth: int = 0, **kwargs):
-        self.add_to_card_button.check_have_text("Add to cart", nth, **kwargs)
+    @allure.step("Check 'add to card' button on product card {index} is in 'Add to cart' state")
+    def check_add_to_cart_button_in_add_state(self, index: int = 0):
+        self.add_to_card_button.check_have_text("Add to cart", index)
 
-    def check_favorite_button_is_active(self, index: int = 0, **kwargs):
-        self.favorite_button.is_active(index, **kwargs)
+    @allure.step("Check that favorite button on product card {index} is active")
+    def check_favorite_button_is_active(self, index: int = 0):
+        self.favorite_button.is_active(index)
 
-    def check_favorite_button_is_inactive(self, index: int = 0, **kwargs):
-        self.favorite_button.is_inactive(index, **kwargs)
+    @allure.step("Check that favorite button on product card {index} is inactive")
+    def check_favorite_button_is_inactive(self, index: int = 0):
+        self.favorite_button.is_inactive(index)
 
     def _count_products_by_name(self, **kwargs) -> int:
         locator = self.page.locator(self.name.locator.format(**kwargs))
