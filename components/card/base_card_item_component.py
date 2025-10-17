@@ -1,12 +1,13 @@
 import allure
 
-from components.base_component import BaseComponent
-
 from playwright.sync_api import Page
 
+from components.base_component import BaseComponent
+
 from elements.text import Text
-from elements.button import Button
 from elements.image import Image
+
+from tools.data_clases import Product
 
 
 class BaseCardItemComponent(BaseComponent):
@@ -16,6 +17,7 @@ class BaseCardItemComponent(BaseComponent):
         self.image = Image(page, '//*[contains(@class, "cart-list")]//img', "product")
         self.name = Text(page, '//*[contains(@class, "cart-list")]//h3', "product name")
         self.remove_button = Button(page, '//button[text()="Remove"]', "product remove")
+
 
         self.price = Text(page, '//*[text()="Price"]/following-sibling::*', "price")
         self.total_price = Text(page, '//*[text()="Total"]/following-sibling::*', "total price")
