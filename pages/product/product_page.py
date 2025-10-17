@@ -1,4 +1,6 @@
-from playwright.async_api import Page
+import allure
+
+from playwright.sync_api import Page
 
 from pages.base_page import BasePage
 
@@ -44,29 +46,37 @@ class ProductPage(BasePage):
         self.back_to_products_button.check_visible()
         self.back_to_products_button.check_have_text("Back to Products")
 
-    def click_back_to_product_button(self):
+    @allure.step("Click back to products button")
+    def click_back_to_products_button(self):
         self.back_to_products_button.click()
 
+    @allure.step("Click favorite button")
     def click_favorite_button(self):
         self.favorite_button.click()
 
+    @allure.step("Click add to card button")
     def click_add_to_card_button(self):
         self.add_to_card_button.click()
 
+    @allure.step("Increase product quantity by {n}")
     def increase_quantity_by(self, n: int):
         for _ in range(n):
             self.quantity_increase_button.click()
 
+    @allure.step("Decrease product quantity by {n}")
     def decrease_quantity_by(self, n: int):
         for _ in range(n):
             self.quantity_decrease_button.click()
 
+    @allure.step("Check product quantity equals expected value: {expected_quantity}")
     def check_quantity_equals_expected(self, expected_quantity: int):
         self.quantity.check_have_value(str(expected_quantity))
 
+    @allure.step("Check favorite button is active")
     def check_favorite_button_is_active(self):
         self.favorite_button.is_active()
 
+    @allure.step("Check favorite button is inactive")
     def check_favorite_button_is_inactive(self):
         self.favorite_button.is_inactive()
 
