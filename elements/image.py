@@ -1,3 +1,4 @@
+from playwright.sync_api import expect
 from elements.base_element import BaseElement
 
 
@@ -9,3 +10,7 @@ class Image(BaseElement):
     def get_src(self, nth: int = 0, **kwargs) -> str:
         locator = self.get_locator(nth, **kwargs)
         return locator.get_attribute("src")
+
+    def check_image_src(self, src: str, nth: int = 0, **kwargs):
+        locator = self.get_locator(nth, **kwargs)
+        expect(locator).to_have_attribute("src", src)
