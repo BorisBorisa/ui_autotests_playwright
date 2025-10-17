@@ -34,6 +34,9 @@ class CheckoutOverviewPage(BasePage):
     def get_items_price(self) -> float:
         text = self.items_price.get_inner_text()
         return float(text.split("$")[1])
+    def is_page_opened(self):
+        self.title.check_visible()
+        self.title.check_have_text("Checkout: Overview")
 
     def get_tax(self) -> float:
         text = self.tax.get_inner_text()
