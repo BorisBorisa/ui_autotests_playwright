@@ -3,7 +3,7 @@ from playwright.async_api import Page
 from pages.base_page import BasePage
 
 from components.navigation.auth_header_component import AuthHeaderComponent
-from components.base_card_item_component import BaseCardItemComponent
+from components.card.base_card_item_component import BaseCardItemComponent
 
 from elements.text import Text
 from elements.button import Button
@@ -31,9 +31,6 @@ class CheckoutOverviewPage(BasePage):
         self.cancel_button = Button(page, '//button/*[text()="Cancel"]', "cancel")
         self.finish_button = Button(page, '//button/*[text()="Finish"]', "finish")
 
-    def get_items_price(self) -> float:
-        text = self.items_price.get_inner_text()
-        return float(text.split("$")[1])
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Checkout: Overview")
