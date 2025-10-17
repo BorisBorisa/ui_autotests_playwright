@@ -16,10 +16,7 @@ class CheckoutInformationFormComponent(BaseComponent):
         self.zip_code_input = Input(page, '//*[text()="Zip Code"]/parent::*/input', "zip code")
 
     @allure.step("Fill checkout information form")
-    def fill(self, email: str, first_name: str, last_name: str, zip_code: str):
-        self.email_input.fill(email)
-        self.email_input.check_have_value(email)
-
+    def fill(self, first_name: str, last_name: str, zip_code: str):
         self.first_name_input.fill(first_name)
         self.first_name_input.check_have_value(first_name)
 
