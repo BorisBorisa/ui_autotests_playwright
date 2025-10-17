@@ -14,6 +14,9 @@ class Browser(str, Enum):
 class TestUser(BaseModel):
     email: EmailStr
     password: str
+    first_name: str
+    last_name: str
+    zip_code: str
 
 
 class TestData(BaseModel):
