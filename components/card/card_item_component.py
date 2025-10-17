@@ -2,10 +2,9 @@ import allure
 
 from playwright.sync_api import Page
 
-from components.base_card_item_component import BaseCardItemComponent
+from components.card.base_card_item_component import BaseCardItemComponent
 from components.card.remove_dialog_component import RemoveDialogComponent
 
-from elements.text import Text
 from elements.button import Button
 
 from tools.data_clases import Product
@@ -23,7 +22,6 @@ class CardItemComponent(BaseCardItemComponent):
         self.quantity_increase_button = Button(
             page, '//*[text()="Quantity"]/following-sibling::*/*[text()="+"]', "increase"
         )
-        self.quantity = Text(page, '//*[text()="Quantity"]/following-sibling::*/span', "quantity")
 
         self.remove_dialog = RemoveDialogComponent(page)
 
