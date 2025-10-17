@@ -36,7 +36,7 @@ class TestFavoriteProducts:
         products_page.reload()
 
         products_page.product_card.check_favorite_button_is_active(0)
-        products_page.product_card.check_favorite_button_is_active(0)
+        products_page.product_card.check_favorite_button_is_active(5)
 
         products_page.header.click_user_favorites()
         favorites_page.is_page_opened()
@@ -91,10 +91,13 @@ class TestFavoriteProducts:
         product_page.is_page_opened()
 
         product_page.click_favorite_button()
+        product_page.check_favorite_button_is_active()
         product_page.toast_notification.check_visible_remove_from_favorites_notification()
+
         product_page.click_back_to_product_button()
 
         products_page.product_card.check_favorite_button_is_inactive(1)
+
         products_page.header.click_user_favorites()
         favorites_page.is_page_opened()
 
