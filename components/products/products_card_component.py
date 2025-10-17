@@ -75,34 +75,33 @@ class ProductCardComponent(BaseComponent):
         locator = self.page.locator(self.name.locator.format(**kwargs))
         return locator.count()
 
-    def get_all_prices(self, **kwargs) -> list[float]:
+    def get_all_names(self):
+        return [self.name.get_inner_text(i) for i in range(self._count_products_by_name())]
+
+    def get_all_prices(self) -> list[float]:
         prices = []
 
         for nth in range(self._count_products_by_name()):
-            price = self.price.get_inner_text(nth, **kwargs)
+            price = self.price.get_inner_text(nth)
             prices.append(float(price.replace("$", "")))
 
         return prices
 
-    def get_all_names(self, **kwargs):
-        return [self.name.get_inner_text(i, **kwargs) for i in range(self._count_products_by_name())]
-
-    def get_product(self, nth: int = 0, **kwargs) -> Product:
+    def get_product(self, nth: int = 0) -> Product:
         return Product(
-            name=self.name.get_inner_text(nth, **kwargs),
-            img_src=self.image.get_src(nth, **kwargs),
-            price=self.price.get_inner_text()
+            name=self.name.get_inner_text(nth),
+            img_src=self.image.get_src(nth),
+            price=self.price.get_inner_text(nth)
         )
 
-    def get_all_products(self, **kwargs) -> list[Product]:
+    def get_all_products(self) -> list[Product]:
         products = []
 
         for nth in range(self._count_products_by_name()):
             product = Product(
-                name=self.name.get_inner_text(nth, **kwargs),
-                img_src=self.image.get_src(nth, **kwargs),
-                price=self.price.get_inner_text()
+                name=self.name.get_inner_text(nth),
+                img_src=self.image.get_src(nth),
+                price=self.price.get_inner_text(nth)
             )
             products.append(product)
-
         return products
