@@ -18,6 +18,8 @@ class LoginPage(BasePage):
 
         self.header = BaseHeaderComponent(page)
 
+        self.title = Text(page, '//h2[text()="Login"]', "login")
+
         self.email_input = Input(page, '//*[@id="email"]', "email")
         self.password_input = Input(page, '//*[@id="password"]', "password")
         self.login_button = Button(page, '//button[text()="Login"]', "login")
