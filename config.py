@@ -46,7 +46,7 @@ class Settings(BaseSettings):
 
     @classmethod
     def initialize(cls) -> Self:
-        tracing_dir = DirectoryPath("./tracing")
+        tracing_dir = DirectoryPath("./.tracing")
         browser_state_file = FilePath("./.auth/browser-state.json")
 
         tracing_dir.mkdir(exist_ok=True)
