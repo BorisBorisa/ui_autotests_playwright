@@ -22,10 +22,7 @@ class TestAuthorization:
         )
 
         login_page.click_login_button()
-
-        products_page.header.check_visible(email=settings.test_user.email)
-        products_page.title.check_visible()
-        products_page.products_order_menu.check_visible()
+        products_page.is_page_opened()
 
     @allure.title("User logout")
     def test_user_logout(self, products_page_with_state: ProductsPage, login_page_with_state: LoginPage):
