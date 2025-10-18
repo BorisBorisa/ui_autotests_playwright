@@ -1,4 +1,5 @@
 import pytest
+import allure
 
 from pages.products.products_page import ProductsPage
 from pages.cart.cart_page import CardPage
@@ -12,6 +13,7 @@ from config import settings
 @pytest.mark.regression
 @pytest.mark.checkout
 class TestCheckout:
+    @allure.title("Checkout with multiple products")
     def test_checkout_with_multiple_products(
             self,
             products_page_with_state: ProductsPage,
