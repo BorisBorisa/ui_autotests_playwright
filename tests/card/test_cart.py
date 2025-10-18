@@ -48,7 +48,6 @@ class TestCart:
 
         card_page.card_item.check_cart_items_equal_expected(added_products)
 
-
     @allure.title("Add products to cart from products card")
     def test_add_product_to_cart_from_product_card(
             self,
@@ -98,6 +97,7 @@ class TestCart:
 
         card_page.card_item.check_cart_items_equal_expected([product])
 
+    @allure.title("Removing products from cart")
     def test_removing_product_from_cart(
             self,
             products_page_with_state: ProductsPage,
@@ -119,6 +119,7 @@ class TestCart:
 
         products_page_with_state.is_page_opened()
 
+    @allure.title("Add product with selected quantity from product card")
     def test_add_product_with_quantity_from_product_card(
             self,
             products_page_with_state: ProductsPage,
