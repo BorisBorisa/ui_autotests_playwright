@@ -30,6 +30,10 @@ class LoginPage(BasePage):
         self.back_to_home_link = Link(page, '//a[text()="Back to home"]', "back to home")
         self.toast_notification = SonnerToastComponent(page)
 
+    def is_page_opened(self):
+        self.title.check_visible()
+        self.back_to_home_link.check_visible()
+
     @allure.step("Fill login form")
     def fill_login_form(self, email: str, password: str):
         self.email_input.fill(email)
