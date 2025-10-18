@@ -133,9 +133,11 @@ class TestCart:
         product = product_page.get_product()
 
         product_page.increase_quantity_by(7)
-        product_page.decrease_quantity_by(3)
+        product_page.check_quantity_equals_expected(8)
 
+        product_page.decrease_quantity_by(3)
         product_page.check_quantity_equals_expected(5)
+
         product_page.click_add_to_card_button()
 
         product_page.header.click_cart_button()
