@@ -46,7 +46,7 @@ class TestCart:
         products_page.header.click_cart_button()
         card_page.is_page_opened()
 
-        card_page.card_item.check_cart_products_equal_expected(added_products)
+        card_page.card_item.check_cart_items_equal_expected(added_products)
 
 
     @allure.title("Add products to cart from products card")
@@ -70,7 +70,7 @@ class TestCart:
         product_page.header.click_cart_button()
         card_page.is_page_opened()
 
-        card_page.card_item.check_cart_products_equal_expected([product])
+        card_page.card_item.check_cart_items_equal_expected([product])
 
     @allure.title("Add products to cart from favorites")
     def test_add_product_to_cart_from_favorites_page(
@@ -96,7 +96,7 @@ class TestCart:
         favorites_page.header.click_cart_button()
         card_page.is_page_opened()
 
-        card_page.card_item.check_cart_products_equal_expected([product])
+        card_page.card_item.check_cart_items_equal_expected([product])
 
     def test_removing_product_from_cart(
             self,
@@ -141,5 +141,5 @@ class TestCart:
         product_page.header.click_cart_button()
         card_page.is_page_opened()
 
-        card_page.card_item.check_cart_products_equal_expected([product])
+        card_page.card_item.check_cart_items_equal_expected([product])
         card_page.card_item.check_quantity_equals_expected(5)
