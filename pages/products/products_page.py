@@ -4,6 +4,7 @@ from playwright.async_api import Page
 
 from pages.base_page import BasePage
 
+from components.navigation.logout_dialog_component import LogoutDialogComponent
 from components.sonner_toast_component import SonnerToastComponent
 from components.navigation.auth_header_component import AuthHeaderComponent
 from components.products.products_order_menu_component import ProductsOrderMenuComponent
@@ -23,6 +24,7 @@ class ProductsPage(BasePage):
         self.product_card = ProductCardComponent(page)
 
         self.toast_notification = SonnerToastComponent(page)
+        self.logout_dialog = LogoutDialogComponent(page)
 
     def is_page_opened(self):
         self.title.check_visible()
