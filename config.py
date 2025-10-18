@@ -37,6 +37,7 @@ class Settings(BaseSettings):
     browsers: list[Browser]
     test_user: TestUser
     test_data: TestData
+    videos_dir: DirectoryPath
     tracing_dir: DirectoryPath
     browser_state_file: FilePath
 
@@ -46,14 +47,17 @@ class Settings(BaseSettings):
 
     @classmethod
     def initialize(cls) -> Self:
-        tracing_dir = DirectoryPath("./.tracing")
+        videos_dir = DirectoryPath("./videos")
+        tracing_dir = DirectoryPath("./tracing")
         browser_state_file = FilePath("./.auth/browser-state.json")
 
+        videos_dir.mkdir(exist_ok=True)
         tracing_dir.mkdir(exist_ok=True)
         browser_state_file.parent.mkdir(parents=True, exist_ok=True)
         browser_state_file.touch(exist_ok=True)
 
         return Settings(
+            videos_dir=videos_dir,
             tracing_dir=tracing_dir,
             browser_state_file=browser_state_file
         )
