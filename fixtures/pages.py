@@ -18,13 +18,8 @@ def login_page(page: Page) -> LoginPage:
 
 
 @pytest.fixture
-def card_page(page_with_state: Page) -> CardPage:
-    return CardPage(page_with_state)
-
-
-@pytest.fixture
-def favorites_page(page_with_state: Page) -> FavoritesPage:
-    return FavoritesPage(page_with_state)
+def login_page_with_state(page_with_state: Page) -> LoginPage:
+    return LoginPage(page_with_state)
 
 
 @pytest.fixture
@@ -35,6 +30,16 @@ def products_page(page: Page) -> ProductsPage:
 @pytest.fixture
 def products_page_with_state(page_with_state: Page) -> ProductsPage:
     return ProductsPage(page_with_state)
+
+
+@pytest.fixture
+def card_page(page_with_state: Page) -> CardPage:
+    return CardPage(page_with_state)
+
+
+@pytest.fixture
+def favorites_page(page_with_state: Page) -> FavoritesPage:
+    return FavoritesPage(page_with_state)
 
 
 @pytest.fixture
