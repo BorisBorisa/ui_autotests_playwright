@@ -91,10 +91,10 @@ class TestFavoriteProducts:
         product_page.is_page_opened()
 
         product_page.click_favorite_button()
-        product_page.check_favorite_button_is_active()
+        product_page.check_favorite_button_is_inactive()
         product_page.toast_notification.check_visible_remove_from_favorites_notification()
 
-        product_page.click_back_to_product_button()
+        product_page.click_back_to_products_button()
 
         products_page.product_card.check_favorite_button_is_inactive(1)
 
