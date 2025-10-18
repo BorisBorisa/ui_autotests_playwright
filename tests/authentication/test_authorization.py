@@ -27,6 +27,17 @@ class TestAuthorization:
         products_page.title.check_visible()
         products_page.products_order_menu.check_visible()
 
+    @allure.title("User logout")
+    def test_user_logout(self, products_page_with_state: ProductsPage, login_page_with_state: LoginPage):
+        products_page_with_state.visit(url=AppRoute.PRODUCTS)
+
+        products_page_with_state.header.click_user_log_out()
+        products_page_with_state.logout_dialog.check_visible()
+
+        products_page_with_state.logout_dialog.click_logout_button()
+
+        login_page_with_state.is_page_opened()
+
     @allure.title("User login with wrong email")
     def test_wrong_email_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
