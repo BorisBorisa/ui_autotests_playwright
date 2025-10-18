@@ -14,9 +14,9 @@ def initialize_playwright_page(
         base_url=settings.get_base_url,
         storage_state=storage_state
     )
+    context.tracing.start(screenshots=True, snapshots=True, sources=True)
 
-    page = context.new_page()
+    yield context.new_page()
 
-    yield page
-
+    context.tracing.stop(path=settings.tracing_dir.joinpath(f'{test_name}.zip'))
     browser.close()
