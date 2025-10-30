@@ -1,6 +1,17 @@
-from loguru import logger
-from loguru._logger import Logger
+import logging
 
 
-def get_logger(name: str) -> Logger:
-    return logger.bind(name=name)
+def get_logger(name: str) -> logging.Logger:
+    logger = logging.getLogger(name)
+
+    logger.setLevel(logging.DEBUG)
+
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.DEBUG)
+
+    formatter = logging.Formatter('%(asctime)s | %(levelname)-8s | %(name)-25s | %(message)s')
+    handler.setFormatter(formatter)
+
+    logger.addHandler(handler)
+
+    return logger
