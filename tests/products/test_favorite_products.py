@@ -7,12 +7,20 @@ from pages.favorites.favorites_page import FavoritesPage
 
 from tools.routes import AppRoute
 
+from tools.allure.epics import AllureEpic
+from tools.allure.features import AllureFeature
+from tools.allure.stories import AllureStory
+from allure_commons.types import Severity
+
+@allure.epic(AllureEpic.PRODUCT_CATALOG)
+@allure.feature(AllureFeature.FAVORITES)
 
 @pytest.mark.regression
 @pytest.mark.products
 @pytest.mark.favorite
 class TestFavoriteProducts:
     @allure.title("Add products to favorites")
+    @allure.story(AllureStory.ADDS_PRODUCT_TO_FAVORITES)
     def test_add_products_to_favorites(
             self,
             products_page_with_state: ProductsPage,
@@ -44,6 +52,7 @@ class TestFavoriteProducts:
         favorites_page.check_favorites_products_equals_expected(added_products)
 
     @allure.title("Add products to favorites from products card")
+    @allure.story(AllureStory.ADDS_PRODUCT_TO_FAVORITES)
     def test_add_product_to_favorites_from_product_card(
             self,
             products_page_with_state: ProductsPage,
@@ -70,6 +79,7 @@ class TestFavoriteProducts:
         favorites_page.check_favorites_products_equals_expected([product])
 
     @allure.title("Removing products from favorites")
+    @allure.story(AllureStory.REMOVES_PRODUCT_FROM_FAVORITES)
     def test_removing_product_from_favorites(
             self,
             products_page_with_state: ProductsPage,

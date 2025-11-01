@@ -8,6 +8,14 @@ from tools.routes import AppRoute
 
 from config import settings
 
+from tools.allure.epics import AllureEpic
+from tools.allure.features import AllureFeature
+from tools.allure.stories import AllureStory
+from allure_commons.types import Severity
+
+@allure.epic(AllureEpic.USER_ACCOUNT)
+@allure.feature(AllureFeature.AUTHENTICATION)
+@allure.story(AllureStory.LOGIN)
 
 @pytest.mark.regression
 @pytest.mark.authorization

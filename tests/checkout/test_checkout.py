@@ -10,6 +10,15 @@ from pages.checkout.checkout_complete_page import CheckoutCompletePage
 from tools.routes import AppRoute
 from config import settings
 
+from tools.allure.epics import AllureEpic
+from tools.allure.features import AllureFeature
+from tools.allure.stories import AllureStory
+from allure_commons.types import Severity
+
+@allure.epic(AllureEpic.SHOPPING_CART_CHECKOUT)
+@allure.feature(AllureFeature.CHECKOUT)
+@allure.story(AllureStory.CHECKOUT_MULTIPLY_PRODUCTS)
+
 @pytest.mark.regression
 @pytest.mark.checkout
 class TestCheckout:
