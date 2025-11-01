@@ -1,0 +1,42 @@
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.LOGIN'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="email"]" at index "0"
+INFO     INPUT:input.py:20 Fill input "email" to value "test@qabrains.com"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="email"]" at index "0"
+INFO     INPUT:input.py:28 Checking that input "email" has a value "test@qabrains.com"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="password"]" at index "0"
+INFO     INPUT:input.py:20 Fill input "password" to value "Password123"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="password"]" at index "0"
+INFO     INPUT:input.py:28 Checking that input "password" has a value "Password123"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Login"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "login"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Products"
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.PRODUCTS'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator ".profile .user-name" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "menu"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Log out"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "log out" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Log out"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "log out"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@role="dialog"]/button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "close icon" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-slot="dialog-title"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-slot="dialog-title"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Are you sure you want to log out?"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-slot="dialog-description"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "description" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-slot="dialog-description"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "description" has text "You're about to log out. Continue?"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@role="dialog"]//button[text()="Close"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "close" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@role="dialog"]//button[text()="Logout"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "logout" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@role="dialog"]//button[text()="Logout"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "logout"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//h2[text()="Login"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "login" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//a[text()="Back to home"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that link "back to home" is visible

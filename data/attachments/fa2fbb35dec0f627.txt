@@ -1,0 +1,52 @@
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.PRODUCTS'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//a[2]" at index "0"
+INFO     TEXT:text.py:19 Getting inner text of text "name"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//img" at index "0"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="$"]" at index "0"
+INFO     TEXT:text.py:19 Getting inner text of text "price"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "0"
+INFO     FAVORITE_RADIO_BUTTON:favorite_radio_button.py:22 Checking that favorite radio button "product" is active
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="success"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "sonner toast" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="success"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "sonner toast" has text "Added to favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "5"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//a[2]" at index "5"
+INFO     TEXT:text.py:19 Getting inner text of text "name"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//img" at index "5"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="$"]" at index "5"
+INFO     TEXT:text.py:19 Getting inner text of text "price"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "5"
+INFO     FAVORITE_RADIO_BUTTON:favorite_radio_button.py:22 Checking that favorite radio button "product" is active
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="success"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "sonner toast" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="success"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "sonner toast" has text "Added to favorites"
+INFO     BASE_PAGE:base_page.py:25 Reloading page with url 'https://practice.qabrains.com/ecommerce'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "0"
+INFO     FAVORITE_RADIO_BUTTON:favorite_radio_button.py:22 Checking that favorite radio button "product" is active
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "5"
+INFO     FAVORITE_RADIO_BUTTON:favorite_radio_button.py:22 Checking that favorite radio button "product" is active
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator ".profile .user-name" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "menu"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Favorites"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "favorites" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Favorites"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//a[2]" at index "0"
+INFO     TEXT:text.py:19 Getting inner text of text "name"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//img" at index "0"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="$"]" at index "0"
+INFO     TEXT:text.py:19 Getting inner text of text "price"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//a[2]" at index "1"
+INFO     TEXT:text.py:19 Getting inner text of text "name"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//img" at index "1"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="$"]" at index "1"
+INFO     TEXT:text.py:19 Getting inner text of text "price"

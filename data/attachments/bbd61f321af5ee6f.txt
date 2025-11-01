@@ -1,0 +1,60 @@
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.LOGIN'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="email"]" at index "0"
+INFO     INPUT:input.py:20 Fill input "email" to value "test@qabrains.com"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="email"]" at index "0"
+INFO     INPUT:input.py:28 Checking that input "email" has a value "test@qabrains.com"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="password"]" at index "0"
+INFO     INPUT:input.py:20 Fill input "password" to value "Password123"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="password"]" at index "0"
+INFO     INPUT:input.py:28 Checking that input "password" has a value "Password123"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Login"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "login"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Products"
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.PRODUCTS'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//img" at index "8"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking image "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Back to Products"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "back to products" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Back to Products"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that button "back to products" has text "Back to Products"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@class="add-cart"]/button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "add to card"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@class="product-details-wrapper"]//h1" at index "0"
+INFO     TEXT:text.py:19 Getting inner text of text "name"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@class="product-details-wrapper"]//img" at index "0"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="$"]" at index "0"
+INFO     TEXT:text.py:19 Getting inner text of text "test"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="success"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "sonner toast" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="success"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "sonner toast" has text "Added to cart"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="ecommerce-header"]//*[@role="button"]//*[text()]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "card counter" has text "1"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="ecommerce-header"]//*[@role="button"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "card"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="cart"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="cart"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Your Cart"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class, "cart-list")]//img" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that image "product" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class, "cart-list")]//img" at index "0"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class, "cart-list")]//h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "product name" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class, "cart-list")]//h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "product name" has text "Sample T-Shirt Name"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Quantity"]/following-sibling::*/span" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "quantity" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Price"]/following-sibling::*" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "price" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Price"]/following-sibling::*" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "price" has text "$56.45"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Total"]/following-sibling::*" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "total price" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Quantity"]/following-sibling::*/*[text()="-"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "decrease" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Quantity"]/following-sibling::*/*[text()="+"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "increase" is visible

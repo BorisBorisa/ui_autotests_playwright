@@ -1,0 +1,63 @@
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.PRODUCTS'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "1"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "2"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "0"
+INFO     FAVORITE_RADIO_BUTTON:favorite_radio_button.py:22 Checking that favorite radio button "product" is inactive
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="warning"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "sonner toast" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="warning"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "sonner toast" has text "Removed from favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//img" at index "1"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking image "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Back to Products"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "back to products" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Back to Products"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that button "back to products" has text "Back to Products"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@class="product-details-wrapper"]//*[@role="button"]/button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@class="product-details-wrapper"]//*[@role="button"]/button" at index "0"
+INFO     FAVORITE_RADIO_BUTTON:favorite_radio_button.py:22 Checking that favorite radio button "product" is inactive
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="warning"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "sonner toast" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="warning"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "sonner toast" has text "Removed from favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Back to Products"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "back to products"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "1"
+INFO     FAVORITE_RADIO_BUTTON:favorite_radio_button.py:22 Checking that favorite radio button "product" is inactive
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator ".profile .user-name" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "menu"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Favorites"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that button "favorites" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[text()="Favorites"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[contains(@class,"products")]//*[@role="button"]/button" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking favorite radio button "product"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="warning"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "sonner toast" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@data-sonner-toast and @data-type="warning"]//*[@data-title]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "sonner toast" has text "Removed from favorites"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="favorites-wrapper"]//h2" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "favorites empty view description" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="favorites-wrapper"]//h2" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "favorites empty view description" has text "You have no favorite products"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="favorites-wrapper"]//a" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that link "continue shopping" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="favorites-wrapper"]//a" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that link "continue shopping" has text "Continue Shopping"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="favorites-wrapper"]//a" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking link "continue shopping"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Products"

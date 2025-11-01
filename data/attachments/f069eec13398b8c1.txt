@@ -1,0 +1,4 @@
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.LOGIN'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//a[text()="Back to home"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking link "back to home"
+INFO     BASE_PAGE:base_page.py:35 Checking that current URL equals 'https://practice.qabrains.com/'

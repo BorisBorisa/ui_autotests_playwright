@@ -1,0 +1,15 @@
+INFO     BASE_PAGE:base_page.py:18 Opening the url 'AppRoute.LOGIN'
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="email"]" at index "0"
+INFO     INPUT:input.py:20 Fill input "email" to value "test@qabrains.com"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="email"]" at index "0"
+INFO     INPUT:input.py:28 Checking that input "email" has a value "test@qabrains.com"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="password"]" at index "0"
+INFO     INPUT:input.py:20 Fill input "password" to value "Password123"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="password"]" at index "0"
+INFO     INPUT:input.py:28 Checking that input "password" has a value "Password123"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//button[text()="Login"]" at index "0"
+INFO     BASE_ELEMENT:base_element.py:34 Clicking button "login"
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:42 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:26 Getting locator "//*[@id="product-sort"]/h3" at index "0"
+INFO     BASE_ELEMENT:base_element.py:50 Checking that text "title" has text "Products"
