@@ -18,6 +18,7 @@ from allure_commons.types import Severity
 class TestSortingProducts:
     @allure.title("Sorting products by price low to high")
     @allure.story(AllureStory.SORTS_PRODUCTS_BY_PRICE)
+    @allure.severity(Severity.NORMAL)
     def test_verify_sorting_by_price_low_to_high(self, products_page_with_state: ProductsPage):
         products_page_with_state.visit(AppRoute.PRODUCTS)
 
@@ -26,6 +27,7 @@ class TestSortingProducts:
 
     @allure.title("Sorting products by price high to low")
     @allure.story(AllureStory.SORTS_PRODUCTS_BY_PRICE)
+    @allure.severity(Severity.NORMAL)
     def test_verify_sorting_by_price_high_to_low(self, products_page_with_state: ProductsPage):
         products_page_with_state.visit(AppRoute.PRODUCTS)
 
@@ -34,6 +36,7 @@ class TestSortingProducts:
 
     @allure.title("Sorting products by name alphabetically a to z")
     @allure.story(AllureStory.SORTS_PRODUCTS_BY_NAME)
+    @allure.severity(Severity.MINOR)
     def test_verify_sorting_by_name_a_to_z(self, products_page_with_state: ProductsPage):
         products_page_with_state.visit(AppRoute.PRODUCTS)
 
@@ -42,6 +45,7 @@ class TestSortingProducts:
 
     @allure.title("Sorting products by name alphabetically z to a")
     @allure.story(AllureStory.SORTS_PRODUCTS_BY_NAME)
+    @allure.severity(Severity.MINOR)
     def test_verify_sorting_by_name_z_to_a(self, products_page_with_state: ProductsPage):
         products_page_with_state.visit(AppRoute.PRODUCTS)
 

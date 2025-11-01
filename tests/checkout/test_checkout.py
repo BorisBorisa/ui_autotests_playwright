@@ -23,6 +23,7 @@ from allure_commons.types import Severity
 @pytest.mark.checkout
 class TestCheckout:
     @allure.title("Checkout with multiple products")
+    @allure.severity(Severity.BLOCKER)
     def test_checkout_with_multiple_products(
             self,
             products_page_with_state: ProductsPage,

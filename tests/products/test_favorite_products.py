@@ -21,6 +21,7 @@ from allure_commons.types import Severity
 class TestFavoriteProducts:
     @allure.title("Add products to favorites")
     @allure.story(AllureStory.ADDS_PRODUCT_TO_FAVORITES)
+    @allure.severity(Severity.NORMAL)
     def test_add_products_to_favorites(
             self,
             products_page_with_state: ProductsPage,
@@ -53,6 +54,7 @@ class TestFavoriteProducts:
 
     @allure.title("Add products to favorites from products card")
     @allure.story(AllureStory.ADDS_PRODUCT_TO_FAVORITES)
+    @allure.severity(Severity.NORMAL)
     def test_add_product_to_favorites_from_product_card(
             self,
             products_page_with_state: ProductsPage,
@@ -80,6 +82,7 @@ class TestFavoriteProducts:
 
     @allure.title("Removing products from favorites")
     @allure.story(AllureStory.REMOVES_PRODUCT_FROM_FAVORITES)
+    @allure.severity(Severity.NORMAL)
     def test_removing_product_from_favorites(
             self,
             products_page_with_state: ProductsPage,

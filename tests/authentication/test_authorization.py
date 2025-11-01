@@ -21,6 +21,7 @@ from allure_commons.types import Severity
 @pytest.mark.authorization
 class TestAuthorization:
     @allure.title("User login with correct email and password")
+    @allure.severity(Severity.BLOCKER)
     def test_successful_authorization(self, login_page: LoginPage, products_page: ProductsPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -33,6 +34,7 @@ class TestAuthorization:
         products_page.is_page_opened()
 
     @allure.title("User logout")
+    @allure.severity(Severity.CRITICAL)
     def test_user_logout(self, products_page_with_state: ProductsPage, login_page_with_state: LoginPage):
         products_page_with_state.visit(url=AppRoute.PRODUCTS)
 
@@ -44,6 +46,7 @@ class TestAuthorization:
         login_page_with_state.is_page_opened()
 
     @allure.title("User login with wrong email")
+    @allure.severity(Severity.CRITICAL)
     def test_wrong_email_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -67,6 +70,7 @@ class TestAuthorization:
         login_page.check_visible_empty_email_alert()
 
     @allure.title("User login with wrong password")
+    @allure.severity(Severity.CRITICAL)
     def test_wrong_password_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -88,6 +92,7 @@ class TestAuthorization:
         login_page.check_visible_empty_password_alert()
 
     @allure.title("User login with wrong credentials")
+    @allure.severity(Severity.CRITICAL)
     def test_wrong_credentials_authorization(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 
@@ -111,6 +116,7 @@ class TestAuthorization:
         login_page.check_visible_empty_password_alert()
 
     @allure.title("Navigation from login page to home page")
+    @allure.severity(Severity.MINOR)
     def test_navigate_from_authorization_to_home(self, login_page: LoginPage):
         login_page.visit(url=AppRoute.LOGIN)
 

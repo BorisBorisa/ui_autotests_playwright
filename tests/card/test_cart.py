@@ -22,6 +22,7 @@ from allure_commons.types import Severity
 class TestCart:
     @allure.title("Add products to cart")
     @allure.story(AllureStory.ADDS_PRODUCT_TO_CARD)
+    @allure.severity(Severity.BLOCKER)
     def test_add_products_to_cart(
             self,
             products_page_with_state: ProductsPage,
@@ -58,6 +59,7 @@ class TestCart:
 
     @allure.title("Add products to cart from products card")
     @allure.story(AllureStory.ADDS_PRODUCT_TO_CARD)
+    @allure.severity(Severity.BLOCKER)
     def test_add_product_to_cart_from_product_card(
             self,
             products_page_with_state: ProductsPage,
@@ -82,6 +84,7 @@ class TestCart:
 
     @allure.title("Add products to cart from favorites")
     @allure.story(AllureStory.ADDS_PRODUCT_TO_CARD)
+    @allure.severity(Severity.CRITICAL)
     def test_add_product_to_cart_from_favorites_page(
             self,
             products_page_with_state: ProductsPage,
@@ -109,6 +112,7 @@ class TestCart:
 
     @allure.title("Removing products from cart")
     @allure.story(AllureStory.REMOVES_PRODUCT_FROM_CARD)
+    @allure.severity(Severity.BLOCKER)
     def test_removing_product_from_cart(
             self,
             products_page_with_state: ProductsPage,
@@ -132,6 +136,7 @@ class TestCart:
 
     @allure.title("Add product with selected quantity from product card")
     @allure.story(AllureStory.ADDS_PRODUCT_TO_CARD)
+    @allure.severity(Severity.CRITICAL)
     def test_add_product_with_quantity_from_product_card(
             self,
             products_page_with_state: ProductsPage,
